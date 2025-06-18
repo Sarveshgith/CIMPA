@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="CIMPA School 2026 - Homological Methods in Noncommutative Algebra and Number theory at SASTRA University, July 06-17, 2026"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>CIMPA 2026</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      * {
+        font-family: 'Source Sans 3', sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #2c3e50;
+      }
+
+      .nav-link {
+        position: relative;
+        color: #2c3e50;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #1a73e8;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #1a73e8;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .hero {
+        background-image: url('assets/imgs/sastranirf2024_N.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: white;
+        letter-spacing: -0.5px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      .hero-date {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+      }
+
+      .hero-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #1a73e8;
+        color: white;
+        font-weight: 500;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        letter-spacing: 0.5px;
+        font-size: 1rem;
+      }
+
+      .hero-button:hover {
+        background: #1557b0;
+        transform: translateY(-2px);
+      }
+
+      .section {
+        padding: 6rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: #2c3e50;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: #1a73e8;
+      }
+
+      .card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      .card-text {
+        color: #4a5568;
+        line-height: 1.7;
+        font-size: 1.1rem;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: #e2e8f0;
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1a73e8;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #1a73e8;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+      }
+
+      .contact-button {
+        background: #1a73e8;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .contact-button:hover {
+        background: #1557b0;
+        transform: translateY(-2px);
+      }
+
+      .footer {
+        background: #2c3e50;
+        color: white;
+        padding: 3rem 0;
+      }
+
+      .footer-text {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.25rem;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      .course-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .course-modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: #2c3e50;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+      }
+
+      .course-card {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .course-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-20 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <p class="text-2xl font-bold text-[#1a73e8]">CIMPA</p>
+            <span class="text-sm text-gray-500 ml-1">2026</span>
+          </div>
+
+          <button class="text-gray-600 md:hidden focus:outline-none" aria-label="Toggle navigation menu">☰</button>
+
+          <ul class="hidden md:flex space-x-8">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#schedule" class="nav-link">Schedule</a></li>
+            <li><a href="#courses" class="nav-link">Courses</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">CIMPA School 2026</h1>
+        <p class="hero-subtitle">
+          <i>Centre International de Mathématiques Pures et Appliquées</i>
+        </p>
+        <p class="hero-subtitle">Homological Methods in Noncommutative Algebra and Number theory</p>
+        <div class="hero-date">
+          <p>SASTRA University</p>
+          <p>Thanjavur, Tamil Nadu, India</p>
+          <p>July 06-17, 2026</p>
+        </div>
+        <a href="#register" class="hero-button"> Register Now </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">About CIMPA</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="card">
+              <h3 class="card-title">Our Mission</h3>
+              <p class="card-text">
+                CIMPA School 2026 aims to provide advanced training in homological methods and their applications in
+                noncommutative algebra and number theory. We bring together leading experts and young researchers to
+                foster collaboration and knowledge exchange.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Why Join Us?</h3>
+              <ul class="card-text space-y-2">
+                <li>• World-class faculty and researchers</li>
+                <li>• Hands-on learning experience</li>
+                <li>• Networking opportunities</li>
+                <li>• State-of-the-art facilities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Program Schedule</h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="timeline-item">
+            <h3 class="card-title">Day 1 - Opening Ceremony</h3>
+            <p class="text-gray-500">July 06, 2026</p>
+            <p class="card-text mt-2">Welcome address and introduction to the program</p>
+          </div>
+          <div class="timeline-item">
+            <h3 class="card-title">Core Lectures</h3>
+            <p class="text-gray-500">July 07-15, 2026</p>
+            <p class="card-text mt-2">Daily lectures and practical sessions</p>
+          </div>
+          <div class="timeline-item">
+            <h3 class="card-title">Closing Ceremony</h3>
+            <p class="text-gray-500">July 17, 2026</p>
+            <p class="card-text mt-2">Certificate distribution and farewell</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Course Information</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="card course-card" data-course-type="introductory">
+              <h3 class="card-title">Introductory Course</h3>
+              <p class="card-text">
+                This section provides a foundation for students new to the field. Topics include essential concepts, key
+                terminology, and guided exercises to help you build confidence.
+              </p>
+              <div class="mt-4">
+                <span class="inline-block bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1 rounded-full">
+                  Beginner Level
+                </span>
+              </div>
+            </div>
+            <div class="card course-card" data-course-type="advanced">
+              <h3 class="card-title">Advanced Courses</h3>
+              <p class="card-text">
+                These courses are designed for learners with some experience. They cover advanced techniques, in-depth
+                case studies, and practical applications to deepen understanding.
+              </p>
+              <div class="mt-4">
+                <span class="inline-block bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1 rounded-full">
+                  Advanced Level
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Modals -->
+    <div id="introductoryModal" class="course-modal">
+      <div class="modal-content">
+        <button class="close-modal">×</button>
+        <h2 class="text-2xl font-semibold mb-4">Introductory Course Details</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Course Overview</h3>
+            <p class="text-gray-700">
+              This course provides a comprehensive introduction to homological methods in noncommutative algebra and
+              number theory. Perfect for students beginning their journey in these fields.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Topics Covered</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Basic concepts of homological algebra</li>
+              <li>Introduction to noncommutative algebra</li>
+              <li>Fundamental number theory concepts</li>
+              <li>Basic applications and examples</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Prerequisites</h3>
+            <p class="text-gray-700">Basic knowledge of abstract algebra and linear algebra is recommended.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Duration</h3>
+            <p class="text-gray-700">2 weeks (July 06-17, 2026)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="advancedModal" class="course-modal">
+      <div class="modal-content">
+        <button class="close-modal">×</button>
+        <h2 class="text-2xl font-semibold mb-4">Advanced Courses Details</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Course Overview</h3>
+            <p class="text-gray-700">
+              Advanced exploration of homological methods and their applications in noncommutative algebra and number
+              theory, designed for researchers and advanced students.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Topics Covered</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Advanced homological algebra techniques</li>
+              <li>Noncommutative ring theory</li>
+              <li>Advanced number theory applications</li>
+              <li>Research-level problems and solutions</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Prerequisites</h3>
+            <p class="text-gray-700">
+              Strong background in abstract algebra, homological algebra, and number theory is required.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-[#1a73e8] mb-2">Duration</h3>
+            <p class="text-gray-700">2 weeks (July 06-17, 2026)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coordinators and Organizers Section -->
+    <section class="section bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Coordinators</h2>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/Portrait_Placeholder.png"
+                  alt="Coordinator"
+                  class="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                />
+                <h3 class="card-title">Dr. Jane Doe</h3>
+                <p class="text-gray-500">Coordinator</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/Portrait_Placeholder.png"
+                  alt="Coordinator"
+                  class="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                />
+                <h3 class="card-title">Dr. Jane Doe</h3>
+                <p class="text-gray-500">Coordinator</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title mt-20">Organizers</h2>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/Portrait_Placeholder.png"
+                  alt="Organizer"
+                  class="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                />
+                <h3 class="card-title">Dr. Jane Doe</h3>
+                <p class="text-gray-500">Organizer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-xl font-semibold">CIMPA 2026</p>
+            <p class="footer-text mt-2">Centre International de Mathématiques Pures et Appliquées</p>
+          </div>
+          <div class="text-center md:text-right">
+            <p class="footer-text">© 2026 CIMPA School. All rights reserved.</p>
+            <p class="footer-text mt-2">Organized by SASTRA University</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Function to open course modal
+        function openCourseModal(courseType) {
+          const modal = document.getElementById(`${courseType}Modal`);
+          if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        }
+
+        // Function to close course modal
+        function closeCourseModal(courseType) {
+          const modal = document.getElementById(`${courseType}Modal`);
+          if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+        }
+
+        // Add click handlers to course cards
+        const courseCards = document.querySelectorAll('.course-card');
+        courseCards.forEach((card) => {
+          card.addEventListener('click', function () {
+            const courseType = this.getAttribute('data-course-type');
+            if (courseType) {
+              openCourseModal(courseType);
+            }
+          });
+        });
+
+        // Add click handlers to close buttons
+        const closeButtons = document.querySelectorAll('.close-modal');
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            const modal = this.closest('.course-modal');
+            if (modal) {
+              modal.classList.remove('active');
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+
+        // Close modal when clicking outside
+        const modals = document.querySelectorAll('.course-modal');
+        modals.forEach((modal) => {
+          modal.addEventListener('click', function (event) {
+            if (event.target === this) {
+              this.classList.remove('active');
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
