@@ -201,7 +201,7 @@ analogue of the Auslander-Buchsbaum theorem in this setting.`,
         card.innerHTML = `
           <h4 class="card-title">${course.title}</h4>
           <div>
-            <button class="contact-button mt-2" data-category="${catIdx}" data-idx="${idx}">View Sub-Courses</button>
+            <button class="contact-button mt-2 w-full" data-category="${catIdx}" data-idx="${idx}">View Sub-Courses</button>
           </div>
         `;
         container.appendChild(card);
