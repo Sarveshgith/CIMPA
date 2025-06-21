@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/imgs/cimpa-long-cmjn-1-removebg-preview.png" />
     <meta
       name="description"
       content="CIMPA School 2026 - Homological Methods in Noncommutative Algebra and Number theory at SASTRA University, July 06-17, 2026"
@@ -587,14 +588,33 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">CIMPA School 2026</h1>
-        <p class="hero-subtitle">
+    <section id="home" class="hero" style="position: relative">
+      <!-- Grey overlay for the entire hero section -->
+      <div style="position: absolute; inset: 0; background: rgba(60, 60, 60, 0.45); z-index: 1"></div>
+      <div class="hero-content" style="position: relative; z-index: 2">
+        <div class="flex justify-center items-center mb-6">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full">
+            <img
+              src="assets/imgs/sas40_WO_TPJ.jpg"
+              alt="SASTRA Logo"
+              class="h-16 w-auto sm:h-20 md:h-28 object-contain"
+              loading="lazy"
+            />
+            <img
+              src="assets/imgs/cimpa-long-cmjn-1.png"
+              alt="CIMPA Logo"
+              class="h-16 w-auto sm:h-20 md:h-28 object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <p class="hero-subtitle" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
           <i>Centre International de Mathématiques Pures et Appliquées</i>
         </p>
-        <p class="hero-subtitle">Homological Methods in Noncommutative Algebra and Number theory</p>
-        <div class="hero-date">
+        <p class="hero-subtitle" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
+          Homological Methods in Noncommutative Algebra and Number theory
+        </p>
+        <div class="hero-date" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
           <p>SASTRA University</p>
           <p>Thanjavur, Tamil Nadu, India</p>
           <p>July 06-17, 2026</p>
@@ -741,6 +761,24 @@
 
         <h2 class="section-title mt-20">Organizers</h2>
         <div class="max-w-6xl mx-auto">
+          <!-- Local Organizers -->
+          <h3 class="text-lg font-bold text-[#1a73e8] mb-4 mt-8">Local Organizers</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/Srikanth Photo.jpeg"
+                  alt="Organizer"
+                  class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-lg"
+                  loading="lazy"
+                />
+                <h3 class="card-title">Srikanth Raghavendran</h3>
+                <p class="text-gray-500">Professor - SASTRA Deemed to be University</p>
+              </div>
+            </div>
+          </div>
+          <!-- International Organizers -->
+          <h3 class="text-lg font-bold text-[#1a73e8] mb-4 mt-8">International Organizers</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="card">
               <div class="text-center">
@@ -778,24 +816,24 @@
                 <p class="text-gray-500">Professor - Ruhr University Bochum</p>
               </div>
             </div>
-            <div class="card">
-              <div class="text-center">
-                <img
-                  src="assets/imgs/Srikanth Photo.jpeg"
-                  alt="Organizer"
-                  class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-lg"
-                  loading="lazy"
-                />
-                <h3 class="card-title">Srikanth Raghavendran</h3>
-                <p class="text-gray-500">Professor - SASTRA Deemed to be University</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
+    <!-- Poster Section (moved to bottom) -->
+    <section class="section bg-blue">
+      <div class="container mx-auto px-4 flex flex-col items-center">
+        <h2 class="section-title">Event Poster</h2>
+        <img
+          src="assets/imgs/CIMPA_Poster.jpg"
+          alt="CIMPA 2026 Event Poster"
+          class="max-w-full md:max-w-md rounded-lg shadow-lg my-6 border border-blue-200"
+          loading="lazy"
+        />
+      </div>
+    </section>
     <footer class="footer">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
