@@ -614,7 +614,7 @@
   <body>
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-      <div class="mobile-nav-content">
+      <div class="mobile-nav-content pt-24">
         <button class="close-mobile-nav" id="closeMobileNav" aria-label="Close navigation menu">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -689,6 +689,45 @@
             </a>
           </li>
           <li>
+            <a href="#organizers" onclick="closeMobileMenu()" class="mobile-nav-item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"
+                />
+              </svg>
+              <span>Organizing Committee</span>
+            </a>
+          </li>
+          <li>
+            <a href="#teaching-experts" onclick="closeMobileMenu()" class="mobile-nav-item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5"
+                />
+              </svg>
+              <span>Teaching Experts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#registration" onclick="closeMobileMenu()" class="mobile-nav-item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4"
+                />
+              </svg>
+              <span>Register</span>
+            </a>
+          </li>
+          <li>
             <a
               href="assets/Copy of Copy of CIMPA SCHOOL-2026.pdf"
               target="_blank"
@@ -735,7 +774,7 @@
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300"
+      class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300 overflow-x-auto"
     >
       <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
@@ -760,7 +799,7 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <div class="hidden lg:flex items-center space-x-1">
+          <div class="hidden lg:flex items-center space-x-2">
             <a
               href="#home"
               class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
@@ -825,6 +864,38 @@
                 <span>Courses</span>
               </span>
             </a>
+            <a
+              href="#organizers"
+              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
+            >
+              <span class="flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"
+                  />
+                </svg>
+                <span>Organizing Committee</span>
+              </span>
+            </a>
+            <a
+              href="#teaching-experts"
+              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
+            >
+              <span class="flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5"
+                  />
+                </svg>
+                <span>Teaching Experts</span>
+              </span>
+            </a>
             <div class="w-px h-6 bg-gray-300 mx-2"></div>
             <a
               href="assets/Copy of Copy of CIMPA SCHOOL-2026.pdf"
@@ -843,9 +914,7 @@
               <span>Schedule PDF</span>
             </a>
             <a
-              href="https://application.cimpa.info/"
-              target="_blank"
-              rel="noopener"
+              href="#registration"
               class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-2"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -854,7 +923,7 @@
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                ></path>
+                />
               </svg>
               <span>Register</span>
             </a>
@@ -866,15 +935,24 @@
             id="mobileMenuBtn"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
+            type="button"
           >
-            <svg
-              class="w-6 h-6 text-gray-700 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+            <span id="mobileMenuIcon">
+              <!-- Hamburger Icon (default) -->
+              <svg
+                class="w-6 h-6 text-gray-700 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </span>
           </button>
         </div>
       </div>
@@ -912,9 +990,7 @@
           <p>Thanjavur, Tamil Nadu, India</p>
           <p>July 06-17, 2026</p>
         </div>
-        <a href="https://application.cimpa.info/" target="_blank" class="hero-button" role="button" tabindex="0">
-          Register Now
-        </a>
+        <a href="#registration" class="hero-button" role="button" tabindex="0"> Register Now </a>
       </div>
     </section>
 
@@ -1073,6 +1149,33 @@
                 <p class="text-gray-500">Professor - Université Paris Cité</p>
               </div>
             </div>
+
+            <!-- Scientific Officer Card -->
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/OR2017-Triglav.png"
+                  alt="Scientific Officer"
+                  class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-lg"
+                  loading="lazy"
+                />
+                <h3 class="card-title">Olivier Ramaré</h3>
+                <p class="text-gray-500">Scientific officer<br />Aix-Marseille Université, Marseille, France</p>
+              </div>
+            </div>
+            <!-- Coordinator: Srikanth D. Iyengar -->
+            <div class="card">
+              <div class="text-center">
+                <img
+                  src="assets/imgs/photoNormal.jpeg.jpg"
+                  alt="Coordinator"
+                  class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-lg"
+                  loading="lazy"
+                />
+                <h3 class="card-title">Srikanth D. Iyengar</h3>
+                <p class="text-gray-500">Professor - University of Utah</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1172,6 +1275,182 @@
           class="max-w-full md:max-w-md rounded-lg shadow-lg my-6 border border-blue-200"
           loading="lazy"
         />
+      </div>
+    </section>
+
+    <!-- Teaching Experts Section -->
+    <section id="teaching-experts" class="section bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Teaching Experts</h2>
+        <div class="max-w-6xl mx-auto space-y-10">
+          <!-- Example Teaching Expert Card -->
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs//WhatsApp Image 2025-06-20 at 13.46.25_5dcb68a1.jpg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Dr. Umamaheswaran Arunachalam</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Umamaheswaran Arunachalam is an Assistant Professor of Mathematics at SASTRA Deemed University,
+                Thanjavur. His research interests include study of Rings and categories of Modules, Homological Algebra,
+                Cluster Algebras, Lie algebras, Representation theory of finite dimensional algebras.
+              </p>
+            </div>
+          </div>
+          <!-- Repeat for more experts -->
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs/Keller-2020.jpeg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Dr. Bernhard Keller</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Bernhard Keller is a professor at Université Paris Cité. In his research, he applies representation
+                theory and homological algebra to the study of cluster algebras.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs/Sujatha Ramdorai.jpg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Sujatha Ramdorai</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Currently holding a Canada Research Chair position at the University of British Columbia, Canada. Prior
+                to this, was a Professor at Tata Institute of Fundamental research. Areas of interest include Algebraic
+                Number Theory, Iwasawa theory of elliptic curves over noncommutative p-adic Lie extensions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs/Ashish.JPG"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">K. Ashish Srivastava</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Ashish K Srivastava is a Professor of Mathematics at Saint Louis University, USA. His research interests
+                include Noncommutative Algebra, and Combinatorial Algebra. He is an author of two research monographs:
+                one published in the London Math Society Lecture Notes series of Cambridge University Press and the
+                other in Oxford Mathematical Monographs Series of Oxford University Press. Dr Srivastava has published
+                more than 45 research articles, and his research has been partially funded by Simons Foundation. He has
+                served in the American Mathematical Society committee on human rights of mathematicians and is currently
+                serving on the editorial board of the Journal of Algebra and its Applications.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs/Sanoli Gun-Photo.jpg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Sanoli Gun</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Sanoli Gun is a Professor of Mathematics at the Institute of Mathematical Sciences. She works in Number
+                Theory and in particular, modular forms, special values of L-functions, transcendence and analytic
+                theory of algebraic numbers.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets\imgs\photoNormal.jpeg.jpg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Srikanth B. Iyengar</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Srikanth Iyengar grew up in Hyderabad, India, and was granted a Bachelor of Technology in Computer
+                Science, by the Indian Institute of Technology at Madras. He went on to study Mathematics, and earned an
+                M.S. (1994) and a Ph. D. (1998) from Purdue University, West Lafayette. After various post-doctoral
+                positions, and a long stint as a faculty member at the University of Nebraska-Lincoln, he joined the
+                Department of Mathematics at the University of Utah in 2014. Srikanth's main research interest is
+                commutative algebra, but he often borrows techniques from algebraic topology and representation theory.
+                He has also returned that favor by applying ideas from commutative algebra to solve problems arising in
+                the modular representation theory of finite groups, and, more recently, in algebraic number theory.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
+          >
+            <img
+              src="assets/imgs/KM_Baur Karin.jpg"
+              alt="Expert Name"
+              class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
+            />
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-blue-800 mb-2">Karin Baur</h3>
+              <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                Originally from Switzerland, Karin Baur is a professor at the Ruhr University Bochum. My research lies
+                in algebraic, geometric and combinatorial methods in representation theory. Current research interests
+                are in cluster algebras and cluster categories, in frieze patterns, surface combinatorics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Registration</h2>
+        <div class="max-w-3xl mx-auto card">
+          <h3 class="card-title mb-4">How to Participate</h3>
+          <p class="card-text mb-4">
+            For registration and application to a CIMPA financial support, read carefully the instructions given here.
+            If you already know what to do, you can also directly go to the application website, create an account (if
+            necessary) and apply to the school of your choice. Be aware that you will be redirected to an external
+            website.
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>
+              <strong>Here:</strong>
+              <a
+                href="https://www.cimpa.info/en/node/63"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-700 underline hover:text-blue-900"
+                >https://www.cimpa.info/en/node/63</a
+              >
+            </li>
+            <li>
+              <strong>Application Website:</strong>
+              <a
+                href="https://applications.cimpa.info/"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-700 underline hover:text-blue-900"
+                >https://applications.cimpa.info/</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1315,6 +1594,29 @@
 
     <script src="assets/main.js"></script>
     <script>
+      function setMobileMenuIcon(isOpen) {
+        const iconSpan = document.getElementById('mobileMenuIcon');
+        if (!iconSpan) return;
+        if (isOpen) {
+          // Close (X) icon
+          iconSpan.innerHTML = `<svg class="w-6 h-6 text-gray-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+        } else {
+          // Hamburger icon
+          iconSpan.innerHTML = `<svg class="w-6 h-6 text-gray-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+        }
+      }
+
+      function closeMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        if (mobileNav && mobileMenuBtn) {
+          mobileNav.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = 'auto';
+          setMobileMenuIcon(false);
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', function () {
         // Mobile navigation functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1322,15 +1624,15 @@
         const closeMobileNav = document.getElementById('closeMobileNav');
 
         function openMobileMenu() {
-          mobileNav.classList.add('active');
-          mobileMenuBtn.setAttribute('aria-expanded', 'true');
-          document.body.style.overflow = 'hidden';
-        }
-
-        function closeMobileMenu() {
-          mobileNav.classList.remove('active');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = 'auto';
+          const isOpen = mobileNav.classList.contains('active');
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            mobileNav.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            setMobileMenuIcon(true);
+          }
         }
 
         mobileMenuBtn.addEventListener('click', openMobileMenu);
@@ -1490,17 +1792,6 @@
           });
         });
       });
-
-      // Global function for mobile menu
-      function closeMobileMenu() {
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        if (mobileNav && mobileMenuBtn) {
-          mobileNav.classList.remove('active');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = 'auto';
-        }
-      }
     </script>
   </body>
 </html>
