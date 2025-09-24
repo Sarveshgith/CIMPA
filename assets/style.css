@@ -9,7 +9,7 @@
 }
 
 .hero {
-  background-image: url('imgs/Untitled\ document-8_page-0001.jpg');
+  background-image: url('./imgs/Sastra_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
