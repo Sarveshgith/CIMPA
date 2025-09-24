@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Introductory Courses',
       courses: [
         {
-          title: 'An introduction to the Basic Homological Algebra',
+          title: 'An introduction to the Basic Homological Algebra - I',
           subCourses: [
             {
-              title: 'An introduction to the Basic Homological Algebra',
+              title: 'An introduction to the Basic Homological Algebra - I',
               duration: '2 hours',
               lecturer: 'Bernhard Keller',
               abstract: `After a reminder on the basic language of categories and functors, we will introduce the notions of projectivity and 
@@ -18,7 +18,7 @@ Ext. We will illustrate the notions and constructions using examples from the re
 of path algebras of quivers.`,
             },
             {
-              title: 'An introduction to Homological algebra and its dimension',
+              title: 'An introduction to Homological algebra and its dimension - I',
               duration: '2 hours',
               lecturer: 'Sujatha Ramdorai',
               abstract: `Building on the introductory  lectures in Homological Algebra, we will visit  the properties of projective 
@@ -26,7 +26,7 @@ dimension, injective dimension, global dimension  and Krull dimension of commuta
 the Auslander-Buchsbaum theorem for regular local rings and give examples.`,
             },
             {
-              title: 'An introduction to Tate-homology and cohomology of Modules',
+              title: 'An introduction to Tate-homology and cohomology of Modules - I',
               duration: '1 hour',
               lecturer: 'Umamaheswaran Arunachalam',
               abstract: ` Introduction of Tate-homology, stable homology, unbounded homology and cohomology of modules with some 
@@ -35,10 +35,10 @@ standard theorems.`,
           ],
         },
         {
-          title: 'Surface combinatorics for categories of modules',
+          title: 'Surface combinatorics for categories of modules - I',
           subCourses: [
             {
-              title: 'Surface combinatorics for categories of modules. ',
+              title: 'Surface combinatorics for categories of modules - I',
               duration: '2 hours',
               lecturer: 'Karin Baur',
               abstract: `Surface combinatorics have been instrumental in describing algebraic structures. In these lectures, I will 
@@ -50,10 +50,10 @@ and also to relations among the paths in the quiver. `,
           ],
         },
         {
-          title: 'Introduction to Leavitt path algebras',
+          title: 'Introduction to Leavitt path algebras - I',
           subCourses: [
             {
-              title: 'Introduction to Leavitt path algebras',
+              title: 'Introduction to Leavitt path algebras - I',
               duration: '2 hours',
               lecturer: 'K. Ashish Srivastava',
               abstract: `We will introduce Leavitt path algebras and discuss the motivation behind their study. We will characterize 
@@ -63,10 +63,10 @@ ideals and the multiplicative ideal theory of Leavitt path algebras.`,
           ],
         },
         {
-          title: 'Commutative algebra inspired by modularity lifting',
+          title: 'Commutative algebra inspired by modularity lifting - I',
           subCourses: [
             {
-              title: 'Commutative algebra inspired by modularity lifting ',
+              title: 'Commutative algebra inspired by modularity lifting - I',
               duration: '2 hours',
               lecturer: 'Srikanth Iyengar',
               abstract: `Andrew Wiles, in the course of his proof of the modularity of elliptic curves, discovered a numerical criterion 
@@ -79,10 +79,10 @@ modules.`,
           ],
         },
         {
-          title: 'Special values of Modular L-functions; integral and half-integral',
+          title: 'Special values of Modular L-functions; integral and half-integral - I',
           subCourses: [
             {
-              title: 'Special values of Modular L-functions; integral and half-integral',
+              title: 'Special values of Modular L-functions; integral and half-integral - I',
               duration: '2 hours',
               lecturer: 'Sanoli Gun',
               abstract: `We shall discuss special values as well growth of modular L-functions, both in the integral and half-integral set 
@@ -96,10 +96,10 @@ up.`,
       category: 'Advanced Courses',
       courses: [
         {
-          title: 'Introduction to the Basic Homological Algebra',
+          title: 'Introduction to the Basic Homological Algebra - II',
           subCourses: [
             {
-              title: 'Introduction to the Basic Homological Algebra',
+              title: 'Introduction to the Basic Homological Algebra - II',
               duration: '1 hour',
               lecturer: 'Bernhard Keller',
               abstract: `We will consider equivalences between module categories and explain Morita theory. We will introduce the 
@@ -109,7 +109,7 @@ coming from equivalences between module categories. We will present Rickard's th
 framework for the study of such equivalences which is analogous to Morita theory. `,
             },
             {
-              title: 'Introduction to the Basic Homological Algebra',
+              title: 'Introduction to the Basic Homological Algebra  - II',
               duration: '1 hour',
               lecturer: 'Umamaheswaran Arunachalam',
               abstract: `In the continuation of the basic level course, we study the Tate homology, stable homology and unbounded 
@@ -119,10 +119,10 @@ for general Noetherian algebras and for Gorenstein algebras.`,
           ],
         },
         {
-          title: 'Surface combinatorics for categories of modules',
+          title: 'Surface combinatorics for categories of modules - II',
           subCourses: [
             {
-              title: 'Surface combinatorics for categories of modules.',
+              title: 'Surface combinatorics for categories of modules - II',
               duration: '2 hours',
               lecturer: 'Karin Baur',
               abstract: `In these lectures, we explain how surface dissections define (gentle) algebras, we will discuss the module 
@@ -133,10 +133,10 @@ morphisms between objects or to the so-called Auslander-Reiten translation in th
           ],
         },
         {
-          title: 'Introduction to Leavitt path algebras',
+          title: 'Introduction to Leavitt path algebras - II',
           subCourses: [
             {
-              title: 'Introduction to Leavitt path algebras ',
+              title: 'Introduction to Leavitt path algebras - II',
               duration: '2 hours',
               lecturer: 'K. Ashish Srivatsva',
               abstract: `We will discuss the construction of graded automorphisms of Leavitt path algebras and as an application study Zhang 
@@ -146,10 +146,10 @@ helps us construct new classes of irreducible representations.`,
           ],
         },
         {
-          title: 'Commutative algebra inspired by modularity lifting',
+          title: 'Commutative algebra inspired by modularity lifting - II',
           subCourses: [
             {
-              title: 'Commutative algebra inspired by modularity lifting',
+              title: 'Commutative algebra inspired by modularity lifting - II',
               duration: '2 hours',
               lecturer: 'Srikanth Iyengar',
               abstract: `The goal of my lecture series is to present from the Introductory course results, and their extensions that were 
@@ -161,17 +161,17 @@ Atiyah and Macdonald, and basic homological algebra.`,
           ],
         },
         {
-          title: 'Special values of Modular L-functions; integral and half-integral',
+          title: 'Special values of Modular L-functions; integral and half-integral - II',
           subCourses: [
             {
-              title: 'Special values of Modular L-functions; integral and half-integral ',
+              title: 'Special values of Modular L-functions; integral and half-integral - II',
               duration: '2 hours',
               lecturer: 'Sanoli Gun',
               abstract: `We will discuss aspects of cohomology theory relevant to special values of modular L-functions both in the integral and 
 half-integral set up, especially at points inside the critical strip.`,
             },
             {
-              title: 'Iwasawa Theory with Homological algebra and its arithmetic',
+              title: 'Iwasawa Theory with Homological algebra and its arithmetic - II',
               duration: '2 hours',
               lecturer: 'Sujatha Ramdorai',
               abstract: `We will  define Auslander regular local domains for Non-commutative left and right Noetherian domains, We will then 
