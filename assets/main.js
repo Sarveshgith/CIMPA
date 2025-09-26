@@ -55,7 +55,7 @@ and also to relations among the paths in the quiver. `,
             {
               title: 'Introduction to Leavitt path algebras - I',
               duration: '2 hours',
-              lecturer: 'K. Ashish Srivastava',
+              lecturer: 'Ashish K Srivastava',
               abstract: `We will introduce Leavitt path algebras and discuss the motivation behind their study. We will characterize 
 basic ring theoretic properties of Leavitt path algebras and study their graded structure. We will then discuss (graded) 
 ideals and the multiplicative ideal theory of Leavitt path algebras.`,
@@ -138,7 +138,7 @@ morphisms between objects or to the so-called Auslander-Reiten translation in th
             {
               title: 'Introduction to Leavitt path algebras - II',
               duration: '2 hours',
-              lecturer: 'K. Ashish Srivatsva',
+              lecturer: 'Ashish K Srivatsva',
               abstract: `We will discuss the construction of graded automorphisms of Leavitt path algebras and as an application study Zhang 
 twist of Leavitt path algebras. We will then discuss irreducible representations of Leavitt path algebras and see how twist 
 helps us construct new classes of irreducible representations.`,
