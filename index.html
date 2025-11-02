@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="assets/imgs/cimpa-long-cmjn-1-removebg-preview.png" />
@@ -16,7 +16,13 @@
       rel="stylesheet"
     />
     <title>CIMPA 2026</title>
+    
+    <!-- Load Tailwind CSS synchronously -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load external stylesheet -->
     <link rel="stylesheet" href="assets/style.css" />
+    
     <style>
       * {
         font-family: 'Source Sans 3', sans-serif;
@@ -936,10 +942,9 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"
-                  />
-                </svg>
-                <span>Organizing Committee</span>
-              </span>
+                />
+              </svg>
+              <span>Organizing Committee</span>
             </a>
             <a
               href="#teaching-experts"
@@ -952,10 +957,9 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5"
-                  />
-                </svg>
-                <span>Teaching Experts</span>
-              </span>
+                />
+              </svg>
+              <span>Teaching Experts</span>
             </a>
             <div class="w-px h-6 bg-gray-300 mx-2"></div>
             <a
@@ -1258,7 +1262,7 @@
             class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
           >
             <img
-              src="assets img/KM_Baur Karin.jpg"
+              src="assets/imgs/KM_Baur Karin.jpg"
               alt="Expert Name"
               class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
             />
@@ -1442,7 +1446,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets img/photoNormal.jpeg.jpg"
+                  src="assets/imgs/photoNormal.jpeg.jpg"
                   alt="Srikanth B. Iyengar"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1454,7 +1458,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets img/KM_Baur Karin.jpg"
+                  src="assets/imgs/KM_Baur Karin.jpg"
                   alt="Karin Baur"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
