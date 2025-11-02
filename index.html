@@ -186,19 +186,63 @@
 
       /* Hero Section */
       .hero {
-        background-image: url('assets/imgs/Sastra_bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         min-height: 100vh;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 80px;
+        overflow: hidden;
       }
+
       .hero::before {
-        content: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.3), transparent 50%),
+          radial-gradient(circle at 40% 20%, rgba(72, 118, 255, 0.2), transparent 50%);
+        animation: gradientShift 15s ease infinite;
+        z-index: 0;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Floating geometric shapes */
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        animation: float 20s linear infinite;
+        opacity: 0.4;
+        z-index: 0;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+        }
+        100% {
+          transform: translateY(-100px) translateX(100px);
+        }
       }
 
       .hero-content {
@@ -208,7 +252,23 @@
         width: 90%;
         margin: 0 auto;
         text-align: center;
-        padding: 2rem;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.5);
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .hero-title {
@@ -216,31 +276,32 @@
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        color: white;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         letter-spacing: -0.5px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
 
       .hero-subtitle {
         font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-        color: rgba(255, 255, 255, 0.9);
+        color: #1e40af;
         margin-bottom: 1.5rem;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1.6;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       .hero-date {
         font-size: clamp(1rem, 2vw, 1.25rem);
-        color: rgba(255, 255, 255, 0.8);
+        color: #667eea;
         margin-bottom: 2rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        font-weight: 600;
       }
 
       .hero-button {
         display: inline-block;
         padding: clamp(0.875rem, 2vw, 1.25rem) clamp(2rem, 4vw, 3rem);
-        background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         font-weight: 600;
         border-radius: 50px;
@@ -249,7 +310,7 @@
         border: none;
         letter-spacing: 0.5px;
         font-size: clamp(0.9rem, 2vw, 1.1rem);
-        box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         position: relative;
         overflow: hidden;
       }
@@ -261,7 +322,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         transition: left 0.5s;
       }
 
@@ -270,9 +331,9 @@
       }
 
       .hero-button:hover {
-        background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
       }
 
       .hero-button:active {
@@ -898,7 +959,7 @@
             </a>
             <div class="w-px h-6 bg-gray-300 mx-2"></div>
             <a
-              href="assets\Schedule for CIMPA SCHOOL-2026-2.pdf"
+              href="assets\Copy of Copy of CIMPA SCHOOL-2026-3.pdf"
               target="_blank"
               rel="noopener"
               class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 flex items-center space-x-2"
@@ -959,27 +1020,25 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero" style="position: relative">
-      <!-- Grey overlay for the entire hero section -->
-      <div style="position: absolute; inset: 0; background: rgba(60, 60, 60, 0.45); z-index: 1"></div>
-      <div class="hero-content" style="position: relative; z-index: 2">
+    <section id="home" class="hero">
+      <div class="hero-content">
         <div class="flex justify-center items-center mb-6">
           <div class="flex flex-col items-center justify-center w-full">
             <img
               src="assets/imgs/cimpa-long-cmjn-1.png"
               alt="CIMPA Logo"
-              class="h-16 w-auto sm:h-20 md:h-28 object-contain"
+              class="h-16 w-auto sm:h-20 md:h-28 object-contain drop-shadow-lg"
               loading="lazy"
             />
           </div>
         </div>
-        <p class="hero-subtitle" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
+        <p class="hero-subtitle">
           <i>Centre International de Mathématiques Pures et Appliquées</i>
         </p>
-        <p class="hero-subtitle" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
+        <p class="hero-subtitle" style="color: #374151; font-weight: 500">
           Homological Methods in Noncommutative Algebra and Number theory
         </p>
-        <div class="hero-date" style="color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)">
+        <div class="hero-date">
           <p>SASTRA Deemed to be University</p>
           <p>Thanjavur, Tamil Nadu, India</p>
           <p>July 06-17, 2026</p>
@@ -1046,7 +1105,7 @@
                 please refer to our comprehensive schedule document.
               </p>
               <a
-                href="assets/Schedule for CIMPA SCHOOL-2026-2.pdf"
+                href="assets/Copy of Copy of CIMPA SCHOOL-2026-3.pdf"
                 target="_blank"
                 rel="noopener"
                 class="inline-block bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -1199,7 +1258,7 @@
             class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
           >
             <img
-              src="assets/imgs/KM_Baur Karin.jpg"
+              src="assets img/KM_Baur Karin.jpg"
               alt="Expert Name"
               class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
             />
@@ -1336,7 +1395,7 @@
                   loading="lazy"
                 />
                 <h3 class="card-title">Dhanasekaran Ponnialagan</h3>
-                <p class="text-gray-500">Professor<br />SASTRA Deemed to be University, Thanjavur</p>
+                <p class="text-gray-500">Assistant Professor<br />SASTRA Deemed to be University, Thanjavur</p>
               </div>
             </div>
           </div>
@@ -1383,7 +1442,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/photoNormal.jpeg.jpg"
+                  src="assets img/photoNormal.jpeg.jpg"
                   alt="Srikanth B. Iyengar"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1395,7 +1454,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/KM_Baur Karin.jpg"
+                  src="assets img/KM_Baur Karin.jpg"
                   alt="Karin Baur"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1503,7 +1562,7 @@
               </li>
               <li>
                 <a
-                  href="assets\Schedule for CIMPA SCHOOL-2026-2.pdf"
+                  href="assets/Copy of Copy of CIMPA SCHOOL-2026-3.pdf"
                   target="_blank"
                   class="footer-text hover:text-white transition-colors duration-300"
                   >Schedule PDF</a
