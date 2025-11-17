@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/imgs/cimpa-long-cmjn-1-removebg-preview.png" />
+    <meta name="description" content="CIMPA School 2026 - Detailed Timetable and Schedule" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Schedule - CIMPA 2026</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Source Sans 3', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #e0ecff 0%, #f0f6ff 100%);
+        min-height: 100vh;
+        padding: 2rem;
+        color: #22304a;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* Header Styles */
+      .header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: #64748b;
+        font-weight: 500;
+      }
+
+      .header-subtitle {
+        color: #1e40af;
+        font-weight: 600;
+        margin-top: 0.5rem;
+      }
+
+      /* Navigation Tabs */
+      .nav-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        background: white;
+        padding: 0.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        overflow-x: auto;
+      }
+
+      .nav-tab {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        background: transparent;
+        border: none;
+        color: #64748b;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        font-size: 0.95rem;
+      }
+
+      .nav-tab:hover {
+        background: #f1f5f9;
+        color: #2563eb;
+      }
+
+      .nav-tab.active {
+        background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      }
+
+      /* Timetable Wrapper */
+      .timetable-wrapper {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+      }
+
+      /* Day Section */
+      .day-section {
+        margin-bottom: 3rem;
+        animation: fadeInUp 0.6s ease;
+      }
+
+      .day-section:last-child {
+        margin-bottom: 0;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Day Header */
+      .day-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #e0ecff;
+        position: relative;
+      }
+
+      .day-header::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+        border-radius: 2px;
+      }
+
+      .day-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.25rem;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      }
+
+      .day-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: #2563eb;
+      }
+
+      .day-date {
+        margin-left: auto;
+        color: #64748b;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      /* Slots Container */
+      .slots-container {
+        display: grid;
+        gap: 1rem;
+      }
+
+      /* Time Slot */
+      .time-slot {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #f8faff 0%, #f0f6ff 100%);
+        border-radius: 12px;
+        border-left: 4px solid #2563eb;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .time-slot::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #2563eb, #60a5fa);
+        transition: width 0.3s ease;
+      }
+
+      .time-slot:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      }
+
+      .time-slot:hover::before {
+        width: 8px;
+      }
+
+      /* Time Info */
+      .time-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .time-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: white;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+      }
+
+      .time-separator {
+        color: #64748b;
+        font-size: 0.85rem;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .duration-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        background: #e0ecff;
+        color: #2563eb;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      /* Slot Content */
+      .slot-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .slot-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .slot-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #1e40af;
+        line-height: 1.3;
+      }
+
+      .slot-type-badge {
+        padding: 0.25rem 0.75rem;
+        background: #e0ecff;
+        color: #2563eb;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .slot-description {
+        font-size: 1.05rem;
+        color: #475569;
+        line-height: 1.7;
+      }
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #94a3b8;
+      }
+
+      .empty-state svg {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 1.5rem;
+        opacity: 0.5;
+      }
+
+      .empty-state h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #64748b;
+      }
+
+      /* Loading Animation */
+      .loading {
+        text-align: center;
+        padding: 4rem;
+      }
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid #e0ecff;
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 1rem;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Back Button */
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: white;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+      }
+
+      .back-button:hover {
+        background: #2563eb;
+        color: white;
+        transform: translateX(-4px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+
+        .timetable-wrapper {
+          padding: 1.5rem;
+          border-radius: 16px;
+        }
+
+        .time-slot {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          padding: 1.25rem;
+        }
+
+        .time-info {
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .time-separator {
+          margin: 0 0.25rem;
+        }
+
+        .slot-title {
+          font-size: 1.15rem;
+        }
+
+        .slot-description {
+          font-size: 0.95rem;
+        }
+
+        .day-date {
+          margin-left: 0;
+          width: 100%;
+          text-align: left;
+          margin-top: 0.5rem;
+        }
+
+        .nav-tabs {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+
+      /* Accessibility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Print Styles */
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .back-button,
+        .nav-tabs {
+          display: none;
+        }
+
+        .time-slot {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Back Button -->
+      <a href="index.html" class="back-button">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+
+      <!-- Header -->
+      <div class="header">
+        <div class="header-logo">
+          <img src="assets/imgs/cimpa-long-cmjn-1-removebg-preview.png" alt="CIMPA Logo" class="h-12 w-auto" />
+          <div>
+            <h1>📅 Event Schedule</h1>
+          </div>
+        </div>
+        <p>CIMPA School 2026</p>
+        <p class="header-subtitle">Homological Methods in Noncommutative Algebra and Number Theory</p>
+      </div>
+
+      <!-- Navigation Tabs (Optional - for filtering by day) -->
+      <div class="nav-tabs" id="dayTabs">
+        <button class="nav-tab active" data-day="all">All Days</button>
+      </div>
+
+      <!-- Timetable -->
+      <div class="timetable-wrapper">
+        <div id="timetable"></div>
+      </div>
+    </div>
+
+    <script>
+      // Sample JSON Data - Replace this with your actual data
+      const timetableData = {
+        'Monday, July 7': [
+          {
+            start: '09:00',
+            end: '10:00',
+            title: 'Bernhard Keller',
+            description: 'Introduction to Homological Algebra and Derived Categories',
+            type: 'lecture',
+          },
+          {
+            start: '10:00',
+            end: '10:30',
+            title: 'Coffee Break',
+            description: 'Networking and refreshments',
+            type: 'break',
+          },
+          {
+            start: '10:30',
+            end: '11:30',
+            title: 'Sujatha Ramdorai',
+            description: 'Iwasawa Theory and Number Theory Applications',
+            type: 'lecture',
+          },
+          {
+            start: '11:30',
+            end: '12:30',
+            title: 'Ashish K. Srivastava',
+            description: 'Ring Theory and Module Categories',
+            type: 'lecture',
+          },
+          {
+            start: '12:30',
+            end: '14:00',
+            title: 'Lunch Break',
+            type: 'break',
+          },
+          {
+            start: '14:00',
+            end: '15:00',
+            title: 'Srikanth B. Iyengar',
+            description: 'Commutative Algebra Fundamentals',
+            type: 'lecture',
+          },
+          {
+            start: '15:00',
+            end: '16:00',
+            title: 'Tutorial Session',
+            description: 'Problem solving and Q&A',
+            type: 'tutorial',
+          },
+        ],
+        'Tuesday, July 8': [
+          {
+            start: '09:00',
+            end: '10:00',
+            title: 'Karin Baur',
+            description: 'Cluster Algebras and Representation Theory',
+            type: 'lecture',
+          },
+          {
+            start: '10:00',
+            end: '10:30',
+            title: 'Coffee Break',
+            type: 'break',
+          },
+          {
+            start: '10:30',
+            end: '11:30',
+            title: 'Sanoli Gun',
+            description: 'Analytic Number Theory and L-functions',
+            type: 'lecture',
+          },
+          {
+            start: '11:30',
+            end: '12:30',
+            title: 'Bernhard Keller',
+            description: 'Advanced Topics in Derived Categories',
+            type: 'lecture',
+          },
+          {
+            start: '12:30',
+            end: '14:00',
+            title: 'Lunch Break',
+            type: 'break',
+          },
+          {
+            start: '14:00',
+            end: '15:30',
+            title: 'Workshop Session',
+            description: 'Hands-on computational exercises',
+            type: 'workshop',
+          },
+        ],
+        'Wednesday, July 9': [
+          {
+            start: '09:00',
+            end: '10:00',
+            title: 'Sujatha Ramdorai',
+            description: 'Advanced Iwasawa Theory',
+            type: 'lecture',
+          },
+          {
+            start: '10:00',
+            end: '10:30',
+            title: 'Coffee Break',
+            type: 'break',
+          },
+          {
+            start: '10:30',
+            end: '12:30',
+            title: 'Panel Discussion',
+            description: 'Current Research Trends and Open Problems',
+            type: 'panel',
+          },
+          {
+            start: '12:30',
+            end: '14:00',
+            title: 'Lunch Break',
+            type: 'break',
+          },
+          {
+            start: '14:00',
+            end: '15:00',
+            title: 'Group Discussions',
+            description: 'Collaborative problem-solving sessions',
+            type: 'discussion',
+          },
+        ],
+        'Thursday, July 10': [
+          {
+            start: '09:00',
+            end: '10:00',
+            title: 'Ashish K. Srivastava',
+            description: 'Noncommutative Ring Theory',
+            type: 'lecture',
+          },
+          {
+            start: '10:00',
+            end: '10:30',
+            title: 'Coffee Break',
+            type: 'break',
+          },
+          {
+            start: '10:30',
+            end: '11:30',
+            title: 'Srikanth B. Iyengar',
+            description: 'Homological Methods in Commutative Algebra',
+            type: 'lecture',
+          },
+          {
+            start: '11:30',
+            end: '12:30',
+            title: 'Karin Baur',
+            description: 'Representation Theory Applications',
+            type: 'lecture',
+          },
+          {
+            start: '12:30',
+            end: '14:00',
+            title: 'Lunch Break',
+            type: 'break',
+          },
+          {
+            start: '14:00',
+            end: '15:00',
+            title: 'Student Presentations',
+            description: 'Research presentations by participants',
+            type: 'presentation',
+          },
+        ],
+        'Friday, July 11': [
+          {
+            start: '09:00',
+            end: '10:00',
+            title: 'Sanoli Gun',
+            description: 'Modular Forms and L-functions',
+            type: 'lecture',
+          },
+          {
+            start: '10:00',
+            end: '10:30',
+            title: 'Coffee Break',
+            type: 'break',
+          },
+          {
+            start: '10:30',
+            end: '11:30',
+            title: 'Review Session',
+            description: 'Week recap and key concepts',
+            type: 'review',
+          },
+          {
+            start: '11:30',
+            end: '12:30',
+            title: 'Open Discussion',
+            description: 'Q&A with all instructors',
+            type: 'discussion',
+          },
+          {
+            start: '12:30',
+            end: '14:00',
+            title: 'Lunch Break',
+            type: 'break',
+          },
+          {
+            start: '14:00',
+            end: '16:00',
+            title: 'Social Event',
+            description: 'Cultural tour and networking',
+            type: 'social',
+          },
+        ],
+      };
+
+      /**
+       * Calculate duration between two times
+       */
+      function calculateDuration(start, end) {
+        const [startHour, startMin] = start.split(':').map(Number);
+        const [endHour, endMin] = end.split(':').map(Number);
+        const startMinutes = startHour * 60 + startMin;
+        const endMinutes = endHour * 60 + endMin;
+        const diff = endMinutes - startMinutes;
+
+        if (diff >= 60) {
+          const hours = Math.floor(diff / 60);
+          const mins = diff % 60;
+          return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
+        }
+        return `${diff}m`;
+      }
+
+      /**
+       * Get icon for time slot type
+       */
+      function getTypeIcon(type) {
+        const icons = {
+          lecture: '📚',
+          tutorial: '✏️',
+          workshop: '🔧',
+          break: '☕',
+          panel: '💬',
+          discussion: '👥',
+          presentation: '🎤',
+          review: '📝',
+          social: '🎉',
+        };
+        return icons[type] || '📌';
+      }
+
+      /**
+       * Main render function
+       */
+      function renderTimetable(data, containerId = 'timetable', filterDay = 'all') {
+        const container = document.getElementById(containerId);
+
+        if (!container) {
+          console.error(`Container with id "${containerId}" not found`);
+          return;
+        }
+
+        if (!data || Object.keys(data).length === 0) {
+          container.innerHTML = createEmptyState();
+          return;
+        }
+
+        container.innerHTML = '';
+
+        const days = filterDay === 'all' ? Object.keys(data) : [filterDay];
+
+        days.forEach((day, index) => {
+          if (data[day]) {
+            const daySection = createDaySection(day, data[day], index);
+            container.appendChild(daySection);
+          }
+        });
+      }
+
+      /**
+       * Creates a day section
+       */
+      function createDaySection(dayName, slots, dayIndex) {
+        const section = document.createElement('div');
+        section.className = 'day-section';
+        section.setAttribute('data-day', dayName);
+
+        const header = document.createElement('div');
+        header.className = 'day-header';
+
+        const dayNumber = dayIndex + 1;
+        header.innerHTML = `
+          <div class="day-icon">${dayNumber}</div>
+          <h2 class="day-title">${dayName}</h2>
+          <span class="day-date">${slots.length} sessions</span>
+        `;
+
+        const slotsContainer = document.createElement('div');
+        slotsContainer.className = 'slots-container';
+
+        slots.forEach((slot) => {
+          const slotElement = createTimeSlot(slot);
+          slotsContainer.appendChild(slotElement);
+        });
+
+        section.appendChild(header);
+        section.appendChild(slotsContainer);
+
+        return section;
+      }
+
+      /**
+       * Creates a time slot card
+       */
+      function createTimeSlot(slot) {
+        const slotDiv = document.createElement('div');
+        slotDiv.className = 'time-slot';
+        slotDiv.setAttribute('role', 'article');
+        slotDiv.setAttribute('aria-label', `${slot.title} from ${slot.start} to ${slot.end}`);
+
+        const duration = calculateDuration(slot.start, slot.end);
+        const icon = getTypeIcon(slot.type);
+
+        const timeInfo = document.createElement('div');
+        timeInfo.className = 'time-info';
+        timeInfo.innerHTML = `
+          <span class="time-badge">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            ${slot.start}
+          </span>
+          <span class="time-separator">to</span>
+          <span class="time-badge">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            ${slot.end}
+          </span>
+          <span class="duration-badge">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            ${duration}
+          </span>
+        `;
+
+        const content = document.createElement('div');
+        content.className = 'slot-content';
+
+        const header = document.createElement('div');
+        header.className = 'slot-header';
+
+        const title = document.createElement('div');
+        title.className = 'slot-title';
+        title.textContent = `${icon} ${slot.title}`;
+
+        header.appendChild(title);
+
+        if (slot.type) {
+          const typeBadge = document.createElement('span');
+          typeBadge.className = 'slot-type-badge';
+          typeBadge.textContent = slot.type;
+          header.appendChild(typeBadge);
+        }
+
+        content.appendChild(header);
+
+        if (slot.description) {
+          const description = document.createElement('div');
+          description.className = 'slot-description';
+          description.textContent = slot.description;
+          content.appendChild(description);
+        }
+
+        slotDiv.appendChild(timeInfo);
+        slotDiv.appendChild(content);
+
+        return slotDiv;
+      }
+
+      /**
+       * Creates empty state
+       */
+      function createEmptyState() {
+        return `
+          <div class="empty-state">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <h3>No Schedule Available</h3>
+            <p>The timetable will be updated soon. Please check back later.</p>
+          </div>
+        `;
+      }
+
+      /**
+       * Shows loading state
+       */
+      function showLoading(containerId = 'timetable') {
+        const container = document.getElementById(containerId);
+        if (container) {
+          container.innerHTML = `
+            <div class="loading">
+              <div class="spinner"></div>
+              <p style="color: #64748b; font-weight: 500;">Loading schedule...</p>
+            </div>
+          `;
+        }
+      }
+
+      /**
+       * Initialize day filter tabs
+       */
+      function initializeDayTabs(data) {
+        const tabsContainer = document.getElementById('dayTabs');
+        if (!tabsContainer) return;
+
+        // Clear existing tabs except "All Days"
+        const allDaysTab = tabsContainer.querySelector('[data-day="all"]');
+        tabsContainer.innerHTML = '';
+        if (allDaysTab) {
+          tabsContainer.appendChild(allDaysTab);
+        }
+
+        // Add tabs for each day
+        Object.keys(data).forEach((day) => {
+          const tab = document.createElement('button');
+          tab.className = 'nav-tab';
+          tab.setAttribute('data-day', day);
+          tab.textContent = day;
+          tab.addEventListener('click', () => {
+            document.querySelectorAll('.nav-tab').forEach((t) => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderTimetable(timetableData, 'timetable', day);
+          });
+          tabsContainer.appendChild(tab);
+        });
+
+        // Add event listener to "All Days" tab
+        if (allDaysTab) {
+          allDaysTab.addEventListener('click', () => {
+            document.querySelectorAll('.nav-tab').forEach((t) => t.classList.remove('active'));
+            allDaysTab.classList.add('active');
+            renderTimetable(timetableData);
+          });
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        renderTimetable(timetableData);
+        initializeDayTabs(timetableData);
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const tabs = Array.from(document.querySelectorAll('.nav-tab'));
+            const activeTab = tabs.find((tab) => tab.classList.contains('active'));
+            const currentIndex = tabs.indexOf(activeTab);
+
+            let nextIndex;
+            if (e.key === 'ArrowRight') {
+              nextIndex = (currentIndex + 1) % tabs.length;
+            } else {
+              nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+            }
+
+            tabs[nextIndex].click();
+            tabs[nextIndex].focus();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
