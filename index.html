@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="assets/imgs/cimpa-long-cmjn-1-removebg-preview.png" />
@@ -17,10 +16,33 @@
     />
     <title>CIMPA 2026</title>
     
-    <!-- Load Tailwind CSS synchronously -->
+    <!-- Load Tailwind CSS synchronously (blocking) to prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Load external stylesheet -->
+    <!-- Fallback: Add minimal critical CSS for Tailwind utilities if CDN fails -->
+    <style>
+      /* Tailwind CDN Fallback - Critical utilities */
+      .container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+      @media (min-width: 640px) { .container { max-width: 640px; } }
+      @media (min-width: 768px) { .container { max-width: 768px; } }
+      @media (min-width: 1024px) { .container { max-width: 1024px; } }
+      @media (min-width: 1280px) { .container { max-width: 1280px; } }
+      .flex { display: flex; }
+      .hidden { display: none; }
+      .fixed { position: fixed; }
+      .relative { position: relative; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .space-x-2 > * + * { margin-left: 0.5rem; }
+      .space-x-3 > * + * { margin-left: 0.75rem; }
+      .space-x-4 > * + * { margin-left: 1rem; }
+      .space-y-4 > * + * { margin-top: 1rem; }
+      .rounded-lg { border-radius: 0.5rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+      .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    </style>
+    
+    <!-- Load external stylesheet after Tailwind -->
     <link rel="stylesheet" href="assets/style.css" />
     
     <style>
@@ -257,6 +279,8 @@
         max-width: 900px;
         width: 90%;
         margin: 0 auto;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
         text-align: center;
         padding: 3rem;
         background: rgba(255, 255, 255, 0.98);
@@ -910,7 +934,7 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  ></path>
+                ></path>
                 </svg>
                 <span>Schedule</span>
               </span>
@@ -1026,28 +1050,104 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-content">
-        <div class="flex justify-center items-center mb-6">
-          <div class="flex flex-col items-center justify-center w-full">
-            <img
-              src="assets/imgs/cimpa-long-cmjn-1.png"
-              alt="CIMPA Logo"
-              class="h-16 w-auto sm:h-20 md:h-28 object-contain drop-shadow-lg"
-              loading="lazy"
-            />
+        <!-- Logos Section with Professional Layout -->
+        <div class="flex flex-col md:flex-row justify-center items-center mb-8 gap-4 md:gap-8 lg:gap-12">
+          <!-- CIMPA Logo -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-blue-100/50">
+              <img
+                src="assets/imgs/cimpa-long-cmjn-1.png"
+                alt="CIMPA Logo"
+                class="h-16 w-auto sm:h-20 md:h-24 lg:h-28 object-contain transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          
+          <!-- Vertical Divider (hidden on mobile, shown on desktop) -->
+          <div class="hidden md:flex items-center">
+            <div class="w-px h-24 lg:h-28 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent"></div>
+          </div>
+          
+          <!-- SASTRA Logo -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-purple-100/50">
+              <img
+                src="assets/imgs/sastralogo.jpg"
+                alt="SASTRA University Logo"
+                class="h-16 w-auto sm:h-20 md:h-24 lg:h-28 object-contain transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
-        <p class="hero-subtitle">
-          <i>Centre International de Mathématiques Pures et Appliquées</i>
-        </p>
-        <p class="hero-subtitle" style="color: #374151; font-weight: 500">
-          Homological Methods in Noncommutative Algebra and Number theory
-        </p>
-        <div class="hero-date">
-          <p>SASTRA Deemed to be University</p>
-          <p>Thanjavur, Tamil Nadu, India</p>
-          <p>July 06-17, 2026</p>
+
+        <!-- Event Title and Details -->
+        <div class="space-y-4 mb-6">
+          <p class="hero-subtitle text-base md:text-lg font-medium italic">
+            Centre International de Mathématiques Pures et Appliquées
+          </p>
+          
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight px-4">
+            <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Homological Methods in Noncommutative Algebra and Number Theory
+            </span>
+          </h1>
         </div>
-        <a href="#registration" class="hero-button" role="button" tabindex="0"> Register Now </a>
+
+        <!-- Event Information Cards -->
+        <div class="flex flex-col items-center gap-3 mb-8">
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <div class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-blue-100">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              <span class="text-sm font-semibold text-gray-800">SASTRA Deemed University</span>
+            </div>
+            
+            <div class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-purple-100">
+              <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span class="text-sm font-semibold text-gray-800">Thanjavur, Tamil Nadu, India</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 px-5 py-3 rounded-lg shadow-sm border border-blue-200/50">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span class="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              July 06-17, 2026
+            </span>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="mt-6">
+          <a href="#registration" class="hero-button" role="button" tabindex="0">
+            Register Now
+          </a>
+        </div>
+
+        <!-- Program Highlights -->
+        <div class="mt-8 pt-6 border-t border-white/20">
+          <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-700">
+            <div class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+              <span class="font-medium">Two-Week Intensive Program</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+              <span class="font-medium">International Faculty</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+              <span class="font-medium">Collaborative Research</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1287,7 +1387,7 @@
             class="flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8"
           >
             <img
-              src="assets/imgs/Sastra profile image.jpg"
+              src="assets img/Sastra profile image.jpg"
               alt="Expert Name"
               class="w-36 h-36 object-cover rounded-full border-4 border-blue-200 shadow-lg mb-4 md:mb-0"
             />
@@ -1389,7 +1489,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/Sastra profile image.jpg"
+                  src="assets img/Sastra profile image.jpg"
                   alt="Umamaheswaran Arunachalam"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1401,7 +1501,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png"
+                  src="assets img/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png"
                   alt="P. Dhanasekaran"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1430,7 +1530,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/Ashish.JPG"
+                  src="assets img/Ashish.JPG"
                   alt="Ashish K Srivastava"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1442,7 +1542,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/Sujatha Ramdorai.jpg"
+                  src="assets img/Sujatha Ramdorai.jpg"
                   alt="Sujatha Ramdorai"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
@@ -1454,7 +1554,7 @@
             <div class="card">
               <div class="text-center">
                 <img
-                  src="assets/imgs/photoNormal.jpeg.jpg"
+                  src="assets img/photoNormal.jpeg.jpg"
                   alt="Srikanth B. Iyengar"
                   class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                   loading="lazy"
