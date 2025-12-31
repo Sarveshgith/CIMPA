@@ -1,0 +1,66 @@
+{
+  "row1": [
+    {
+      "logo": "https://placehold.co/200x80/2563eb/ffffff?text=Academic+Partner",
+      "name": "Academic Partner",
+      "width": "w-64",
+      "borderColor": "border-blue-100"
+    },
+    {
+      "logo": "https://placehold.co/220x90/9333ea/ffffff?text=Research+Institute",
+      "name": "Research Institute",
+      "width": "w-72",
+      "borderColor": "border-purple-100"
+    },
+    {
+      "logo": "https://placehold.co/200x80/3b82f6/ffffff?text=Technology+Corp",
+      "name": "Technology Corp",
+      "width": "w-64",
+      "borderColor": "border-blue-100"
+    },
+    {
+      "logo": "https://placehold.co/240x100/6366f1/ffffff?text=Innovation+Foundation",
+      "name": "Innovation Foundation",
+      "width": "w-80",
+      "borderColor": "border-indigo-100"
+    },
+    {
+      "logo": "https://placehold.co/200x80/2563eb/ffffff?text=Global+Enterprise",
+      "name": "Global Enterprise",
+      "width": "w-64",
+      "borderColor": "border-blue-100"
+    }
+  ],
+  "row2": [
+    {
+      "logo": "https://placehold.co/220x90/10b981/ffffff?text=Energy+Solutions",
+      "name": "Energy Solutions",
+      "width": "w-72",
+      "borderColor": "border-green-100"
+    },
+    {
+      "logo": "https://placehold.co/200x80/ec4899/ffffff?text=Science+Lab",
+      "name": "Science Lab",
+      "width": "w-64",
+      "borderColor": "border-pink-100"
+    },
+    {
+      "logo": "https://placehold.co/240x100/06b6d4/ffffff?text=Digital+Systems",
+      "name": "Digital Systems",
+      "width": "w-80",
+      "borderColor": "border-cyan-100"
+    },
+    {
+      "logo": "https://placehold.co/200x80/f97316/ffffff?text=Media+Group",
+      "name": "Media Group",
+      "width": "w-64",
+      "borderColor": "border-orange-100"
+    },
+    {
+      "logo": "https://placehold.co/220x90/8b5cf6/ffffff?text=Tech+Innovations",
+      "name": "Tech Innovations",
+      "width": "w-72",
+      "borderColor": "border-violet-100"
+    }
+  ]
+}

@@ -1723,6 +1723,124 @@
       </div>
     </section>
 
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Our Sponsors & Partners</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg max-w-3xl mx-auto">
+          We extend our gratitude to all sponsors and partners supporting CIMPA School 2026
+        </p>
+
+        <!-- Animated Scrolling Row 1 -->
+        <div class="relative mb-8">
+          <div id="sponsorRow1" class="flex animate-scroll gap-6" style="animation: scroll-left 30s linear infinite;">
+            <!-- Sponsors will be loaded dynamically -->
+          </div>
+        </div>
+
+        <!-- Animated Scrolling Row 2 (Reverse Direction) -->
+        <div class="relative mb-8">
+          <div id="sponsorRow2" class="flex animate-scroll gap-6" style="animation: scroll-right 35s linear infinite;">
+            <!-- Sponsors will be loaded dynamically -->
+          </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="text-center mt-12">
+          <div class="inline-flex items-center gap-2 text-gray-500">
+            <div class="w-12 h-px bg-gradient-to-r from-transparent to-blue-300"></div>
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm font-medium">Thank you to all our supporters</span>
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+            </svg>
+            <div class="w-12 h-px bg-gradient-to-l from-transparent to-blue-300"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Load and render sponsors dynamically
+      async function loadSponsors() {
+        try {
+          const response = await fetch('assets/sponsors.json');
+          const data = await response.json();
+          
+          // Function to create sponsor card
+          function createSponsorCard(sponsor) {
+            const card = document.createElement('div');
+            card.className = `flex-shrink-0 ${sponsor.width} h-40 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border ${sponsor.borderColor} flex items-center justify-center hover:scale-105 transition-transform duration-300`;
+            
+            card.innerHTML = `
+              <div class="text-center p-6">
+                <img src="${sponsor.logo}" alt="${sponsor.name}" class="max-w-full max-h-20 mx-auto mb-2 object-contain" loading="lazy" />
+                ${sponsor.name ? `<p class="text-sm font-bold text-gray-700">${sponsor.name}</p>` : ''}
+              </div>
+            `;
+            
+            return card;
+          }
+          
+          // Render Row 1
+          const row1Container = document.getElementById('sponsorRow1');
+          data.row1.forEach(sponsor => {
+            row1Container.appendChild(createSponsorCard(sponsor));
+          });
+          // Duplicate for seamless loop
+          data.row1.forEach(sponsor => {
+            row1Container.appendChild(createSponsorCard(sponsor));
+          });
+          
+          // Render Row 2
+          const row2Container = document.getElementById('sponsorRow2');
+          data.row2.forEach(sponsor => {
+            row2Container.appendChild(createSponsorCard(sponsor));
+          });
+          // Duplicate for seamless loop
+          data.row2.forEach(sponsor => {
+            row2Container.appendChild(createSponsorCard(sponsor));
+          });
+          
+        } catch (error) {
+          console.error('Error loading sponsors:', error);
+        }
+      }
+      
+      // Load sponsors when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadSponsors);
+      } else {
+        loadSponsors();
+      }
+    </script>
+
+    <style>
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes scroll-right {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .animate-scroll:hover {
+        animation-play-state: paused;
+      }
+    </style>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container mx-auto px-4">
