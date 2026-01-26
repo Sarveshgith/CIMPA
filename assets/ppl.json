@@ -1,0 +1,121 @@
+{
+  "teachingExperts": [
+    {
+      "name": "Bernhard Keller",
+      "image": "assets/imgs/Keller-2020.jpeg",
+      "description": "Bernhard Keller is a professor at Université Paris Cité. In his research, he applies representation theory and homological algebra to the study of cluster algebras."
+    },
+    {
+      "name": "Sujatha Ramdorai",
+      "image": "assets/imgs/Sujatha Ramdorai.jpg",
+      "description": "Currently holding a Canada Research Chair position at the University of British Columbia, Canada. Prior to this, was a Professor at Tata Institute of Fundamental research. Areas of interest include Algebraic Number Theory, Iwasawa theory of elliptic curves over noncommutative p-adic Lie extensions."
+    },
+    {
+      "name": "Ashish K Srivastava",
+      "image": "assets/imgs/Ashish.JPG",
+      "description": "Ashish K Srivastava is a Professor of Mathematics at Saint Louis University, USA. His research interests include Noncommutative Algebra, and Combinatorial Algebra. He is an author of two research monographs: one published in the London Math Society Lecture Notes series of Cambridge University Press and the other in Oxford Mathematical Monographs Series of Oxford University Press. Dr Srivastava has published more than 45 research articles, and his research has been partially funded by Simons Foundation. He has served in the American Mathematical Society committee on human rights of mathematicians and is currently serving on the editorial board of the Journal of Algebra and its Applications."
+    },
+    {
+      "name": "Sanoli Gun",
+      "image": "assets/imgs/Sanoli Gun-Photo.jpg",
+      "description": "Sanoli Gun is a Professor of Mathematics at the Institute of Mathematical Sciences. She works in Number Theory and in particular, modular forms, special values of L-functions, transcendence and analytic theory of algebraic numbers."
+    },
+    {
+      "name": "Srikanth B. Iyengar",
+      "image": "assets/imgs/photoNormal.jpeg.jpg",
+      "description": "Srikanth Iyengar grew up in Hyderabad, India, and was granted a Bachelor of Technology in Computer Science, by the Indian Institute of Technology at Madras. He went on to study Mathematics, and earned an M.S. (1994) and a Ph. D. (1998) from Purdue University, West Lafayette. After various post-doctoral positions, and a long stint as a faculty member at the University of Nebraska-Lincoln, he joined the Department of Mathematics at the University of Utah in 2014. Srikanth's main research interest is commutative algebra, but he often borrows techniques from algebraic topology and representation theory. He has also returned that favor by applying ideas from commutative algebra to solve problems arising in the modular representation theory of finite groups, and, more recently, in algebraic number theory."
+    },
+    {
+      "name": "Karin Baur",
+      "image": "assets/imgs/KM_Baur Karin.jpg",
+      "description": "Originally from Switzerland, Karin Baur is a professor at the Ruhr University Bochum. My research lies in algebraic, geometric and combinatorial methods in representation theory. Current research interests are in cluster algebras and cluster categories, in frieze patterns, surface combinatorics."
+    },
+    {
+      "name": "Umamaheswaran Arunachalam",
+      "image": "assets/imgs/Sastra profile image.jpg",
+      "description": "Umamaheswaran Arunachalam is an Assistant Professor of Mathematics at SASTRA Deemed University, Thanjavur. His research interests include study of Rings and categories of Modules, Homological Algebra, Cluster Algebras, Lie algebras, Representation theory of finite dimensional algebras."
+    }
+  ],
+  "coordinators": [
+    {
+      "name": "Bernhard Keller",
+      "image": "assets/imgs/Keller-2020.jpeg",
+      "title": "Professor - Université Paris Cité, Paris"
+    },
+    {
+      "name": "Umamaheswaran Arunachalam",
+      "image": "assets/imgs/Sastra profile image.jpg",
+      "title": "Assistant Professor - SASTRA Deemed to be University, Thanjavur"
+    }
+  ],
+  "scientificOfficer": {
+    "name": "Olivier Ramaré",
+    "image": "assets/imgs/OR2017-Triglav.png",
+    "title": "Scientific Officer",
+    "affiliation": "Aix-Marseille Université, Marseille, France"
+  },
+  "localOrganisers": [
+    {
+      "name": "Srikanth Raghavendran",
+      "image": "assets/imgs/Srikanth Photo.jpeg",
+      "title": "Professor",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
+    },
+    {
+      "name": "Punitha Batra",
+      "image": "assets/imgs/Punitha Batra.png",
+      "title": "Professor H",
+      "affiliation": "Harish-Chandra Research Institute, Prayagraj"
+    },
+    {
+      "name": "Umamaheswaran Arunachalam",
+      "image": "assets/imgs/Sastra profile image.jpg",
+      "title": "Assistant Professor",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
+    },
+    {
+      "name": "Dhanasekaran Ponnialagan",
+      "image": "assets/imgs/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png",
+      "title": "Assistant Professor",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
+    }
+  ],
+  "internationalOrganisers": [
+    {
+      "name": "Bernhard Keller",
+      "image": "assets/imgs/Keller-2020.jpeg",
+      "title": "Professor",
+      "affiliation": "Université Paris Cité, Paris"
+    },
+    {
+      "name": "Ashish K Srivastava",
+      "image": "assets/imgs/Ashish.JPG",
+      "title": "Professor",
+      "affiliation": "Saint Louis University, Saint Louis"
+    },
+    {
+      "name": "Sujatha Ramdorai",
+      "image": "assets/imgs/Sujatha Ramdorai.jpg",
+      "title": "Professor",
+      "affiliation": "University of British Columbia, Canada"
+    },
+    {
+      "name": "Srikanth B. Iyengar",
+      "image": "assets/imgs/photoNormal.jpeg.jpg",
+      "title": "Professor",
+      "affiliation": "University of Utah, Utah"
+    },
+    {
+      "name": "Karin Baur",
+      "image": "assets/imgs/KM_Baur Karin.jpg",
+      "title": "Professor",
+      "affiliation": "Ruhr University Bochum, Bochum"
+    },
+    {
+      "name": "Sanoli Gun",
+      "image": "assets/imgs/Sanoli Gun-Photo.jpg",
+      "title": "Professor",
+      "affiliation": "Institute of Mathematical Sciences (IMSc), Chennai"
+    }
+  ]
+}
