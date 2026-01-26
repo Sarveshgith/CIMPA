@@ -196,8 +196,13 @@
         font-size: 1.5rem;
         color: #6b7280;
         cursor: pointer;
-        padding: 0.5rem;
+        padding: 0.75rem;
         border-radius: 50%;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: all 0.3s ease;
         width: 48px;
         height: 48px;
@@ -643,15 +648,20 @@
 
       @media (max-width: 480px) {
         .hero-content {
-          padding: 1rem;
+          padding: 1rem 0.75rem;
         }
 
         .card {
-          padding: 1.5rem;
+          padding: 1.25rem;
         }
 
         .section-title {
+          font-size: 1.75rem;
           margin-bottom: 2rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 0.875rem;
         }
       }
 
@@ -1258,10 +1268,10 @@ subsequently. The prize is given every year on 22nd December.
                 For a complete detailed schedule including specific lecture topics, speakers, and daily breakdown,
                 please view our interactive timetable or download the PDF.
               </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a
                   href="timetable.html"
-                  class="inline-block bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  class="inline-block bg-[#1a73e8] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1557b0] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
                 >
                   📅 View Interactive Timetable
                 </a>
@@ -1269,7 +1279,7 @@ subsequently. The prize is given every year on 22nd December.
                   href="assets/Copy of Copy of CIMPA SCHOOL-2026-3.pdf"
                   target="_blank"
                   rel="noopener"
-                  class="inline-block bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  class="inline-block bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
                 >
                   📄 Download PDF
                 </a>
@@ -1338,7 +1348,7 @@ subsequently. The prize is given every year on 22nd December.
 
         <!-- Scientific Officer -->
         <div class="max-w-2xl mx-auto mt-10 mb-12">
-          <h2 class="section-title text-2xl mb-6">Scientific Officer</h2>
+          <h2 class="section-title text-2xl mb-10">Scientific Officer</h2>
           <div id="scientificOfficerContainer" class="flex flex-col items-center">
             <!-- Scientific officer will be loaded dynamically -->
           </div>
@@ -1418,11 +1428,11 @@ subsequently. The prize is given every year on 22nd December.
       <div class="container mx-auto px-4">
         <h2 class="section-title">Our Sponsors & Partners</h2>
         <p class="text-center text-gray-600 mb-12 text-lg max-w-3xl mx-auto">
-          We greatfully acknowledge with sincere gratitude the support received from
+          We gratefully acknowledge with sincere gratitude the support received from
         </p>
 
         <!-- Sponsors Grid -->
-        <div id="sponsorsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto items-center justify-items-center">
+        <div id="sponsorsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 max-w-6xl mx-auto items-center justify-items-center">
           <!-- Sponsors will be loaded dynamically -->
         </div>
       </div>

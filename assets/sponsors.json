@@ -5,10 +5,6 @@
       "name": "Academic Partner"
     },
     {
-      "logo": "assets/sponsors/SASTRA Logo.png",
-      "name": "Research Institute"
-    },
-    {
       "logo": "assets/sponsors/cnrs.jpg.jpeg",
       "name": "Technology Corp"
     },
@@ -27,6 +23,10 @@
     {
       "logo": "assets/sponsors/compositio_mathematica.jpg.jpeg",
       "name": "Innovation Foundation"
+    },
+    {
+      "logo": "assets/sponsors/SASTRA Logo.png",
+      "name": "Research Institute"
     }
   ]
 }
