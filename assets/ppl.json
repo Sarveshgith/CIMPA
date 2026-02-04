@@ -1,4 +1,78 @@
 {
+  "scientificCommittee": [
+    {
+      "name": "Henning Krause",
+      "affiliation": "Universität Bielefeld, Bielefeld"
+    },
+    {
+      "name": "Bernhard Keller",
+      "affiliation": "Université Paris Cité, Paris"
+    },
+    {
+      "name": "Krishnaswami Alladi",
+      "affiliation": "University of Florida, Gainesville"
+    },
+    {
+      "name": "Michel Waldschmidt",
+      "affiliation": "Sorbonne Université, Institut de Mathématiques de Jussieu (UMR 7586 du CNRS), Paris"
+    },
+    {
+      "name": "Ken Ono",
+      "affiliation": "University of Virginia, Charlottesville"
+    },
+    {
+      "name": "Sujatha Ramdorai",
+      "affiliation": "University of British Columbia, Vancouver"
+    },
+    {
+      "name": "Claudia Polini",
+      "affiliation": "University of Notre Dame, Notre Dame"
+    },
+    {
+      "name": "Andrea Solotar",
+      "affiliation": "University of Buenos Aires, Autónoma de Buenos Aires"
+    },
+    {
+      "name": "Ravindranathan Thangadurai",
+      "affiliation": "Harish-Chandra Research Institute, Prayagraj"
+    },
+    {
+      "name": "B. Sury",
+      "affiliation": "ISI, Bangalore"
+    }
+  ],
+  "patronInChief": [
+    {
+      "name": "Prof. R. Sethuraman",
+      "image": "assets/patron-in-chief/1. Prof. Sethuraman.png",
+      "title": "Chancellor"
+    },
+    {
+      "name": "Prof. S. Vaidhyasubramaniam",
+      "image": "assets/patron-in-chief/2. VC.png",
+      "title": "Vice Chancellor"
+    },
+    {
+      "name": "Prof. R. Chandramouli",
+      "image": "assets/patron-in-chief/3. The Registrar.png",
+      "title": "The Registrar"
+    },
+    {
+      "name": "Prof. S. Swaminathan",
+      "image": "assets/patron-in-chief/4. Planning and development.png",
+      "title": "Dean Planning and Development"
+    },
+    {
+      "name": "Prof. K. Umamaheswari",
+      "image": "assets/patron-in-chief/5. Dean - Umamaheswari.jpg.jpeg",
+      "title": "Dean SASHE"
+    },
+    {
+      "name": "Prof. M. Sridharan",
+      "image": "assets/patron-in-chief/6. Associate Dean - Sridharan.jpg.jpeg",
+      "title": "Associate Dean, SASHE"
+    }
+  ],
   "teachingExperts": [
     {
       "name": "Bernhard Keller",

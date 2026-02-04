@@ -1369,6 +1369,22 @@ subsequently. The prize is given every year on 22nd December.
             <!-- International organisers will be loaded dynamically -->
           </div>
         </div>
+
+        <!-- Patron-in-Chief -->
+        <h2 class="section-title mt-20">Patron-in-Chief</h2>
+        <div class="max-w-6xl mx-auto">
+          <div id="patronInChiefContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+            <!-- Patron-in-Chief will be loaded dynamically -->
+          </div>
+        </div>
+
+        <!-- Scientific Committee -->
+        <h2 class="section-title mt-20">Scientific Committee</h2>
+        <div class="max-w-6xl mx-auto">
+          <div id="scientificCommitteeContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Scientific Committee will be loaded dynamically -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1583,6 +1599,44 @@ subsequently. The prize is given every year on 22nd December.
                 </div>
               `;
               internationalOrganisersContainer.appendChild(organiserCard);
+            });
+          }
+
+          // Render Patron-in-Chief
+          const patronInChiefContainer = document.getElementById('patronInChiefContainer');
+          if (data.patronInChief && patronInChiefContainer) {
+            data.patronInChief.forEach(patron => {
+              const patronCard = document.createElement('div');
+              patronCard.className = 'card';
+              patronCard.innerHTML = `
+                <div class="text-center">
+                  <img
+                    src="${patron.image}"
+                    alt="${patron.name}"
+                    class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
+                    loading="lazy"
+                  />
+                  <h3 class="card-title">${patron.name}</h3>
+                  <p class="text-gray-500">${patron.title}</p>
+                </div>
+              `;
+              patronInChiefContainer.appendChild(patronCard);
+            });
+          }
+
+          // Render Scientific Committee
+          const scientificCommitteeContainer = document.getElementById('scientificCommitteeContainer');
+          if (data.scientificCommittee && scientificCommitteeContainer) {
+            data.scientificCommittee.forEach(member => {
+              const memberCard = document.createElement('div');
+              memberCard.className = 'bg-white border-l-4 border-blue-500 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:border-blue-600 hover:translate-x-1';
+              memberCard.innerHTML = `
+                <div>
+                  <h3 class="text-lg font-bold text-blue-800 mb-2 leading-tight">${member.name}</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">${member.affiliation}</p>
+                </div>
+              `;
+              scientificCommitteeContainer.appendChild(memberCard);
             });
           }
           
