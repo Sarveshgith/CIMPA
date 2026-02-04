@@ -1370,11 +1370,11 @@ subsequently. The prize is given every year on 22nd December.
           </div>
         </div>
 
-        <!-- Patron-in-Chief -->
-        <h2 class="section-title mt-20">Patron-in-Chief</h2>
+        <!-- Advisory Committee -->
+        <h2 class="section-title mt-20">Advisory Committee</h2>
         <div class="max-w-6xl mx-auto">
-          <div id="patronInChiefContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-            <!-- Patron-in-Chief will be loaded dynamically -->
+          <div id="advisoryCommitteeContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+            <!-- Advisory Committee will be loaded dynamically -->
           </div>
         </div>
 
@@ -1602,25 +1602,25 @@ subsequently. The prize is given every year on 22nd December.
             });
           }
 
-          // Render Patron-in-Chief
-          const patronInChiefContainer = document.getElementById('patronInChiefContainer');
-          if (data.patronInChief && patronInChiefContainer) {
-            data.patronInChief.forEach(patron => {
-              const patronCard = document.createElement('div');
-              patronCard.className = 'card';
-              patronCard.innerHTML = `
+          // Render Advisory Committee
+          const advisoryCommitteeContainer = document.getElementById('advisoryCommitteeContainer');
+          if (data.advisoryCommittee && advisoryCommitteeContainer) {
+            data.advisoryCommittee.forEach(member => {
+              const memberCard = document.createElement('div');
+              memberCard.className = 'card';
+              memberCard.innerHTML = `
                 <div class="text-center">
                   <img
-                    src="${patron.image}"
-                    alt="${patron.name}"
+                    src="${member.image}"
+                    alt="${member.name}"
                     class="w-32 h-32 object-cover rounded-full mx-auto mb-4 shadow-lg"
                     loading="lazy"
                   />
-                  <h3 class="card-title">${patron.name}</h3>
-                  <p class="text-gray-500">${patron.title}</p>
+                  <h3 class="card-title">${member.name}</h3>
+                  <p class="text-gray-500">${member.title}<br />${member.affiliation}</p>
                 </div>
               `;
-              patronInChiefContainer.appendChild(patronCard);
+              advisoryCommitteeContainer.appendChild(memberCard);
             });
           }
 

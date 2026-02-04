@@ -41,36 +41,42 @@
       "affiliation": "ISI, Bangalore"
     }
   ],
-  "patronInChief": [
+  "advisoryCommittee": [
     {
       "name": "Prof. R. Sethuraman",
       "image": "assets/patron-in-chief/1. Prof. Sethuraman.png",
-      "title": "Chancellor"
+      "title": "Chancellor",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     },
     {
       "name": "Prof. S. Vaidhyasubramaniam",
       "image": "assets/patron-in-chief/2. VC.png",
-      "title": "Vice Chancellor"
+      "title": "Vice Chancellor",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     },
     {
       "name": "Prof. R. Chandramouli",
       "image": "assets/patron-in-chief/3. The Registrar.png",
-      "title": "The Registrar"
+      "title": "The Registrar",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     },
     {
       "name": "Prof. S. Swaminathan",
       "image": "assets/patron-in-chief/4. Planning and development.png",
-      "title": "Dean Planning and Development"
+      "title": "Dean Planning and Development",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     },
     {
       "name": "Prof. K. Umamaheswari",
       "image": "assets/patron-in-chief/5. Dean - Umamaheswari.jpg.jpeg",
-      "title": "Dean SASHE"
+      "title": "Dean SASHE",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     },
     {
       "name": "Prof. M. Sridharan",
       "image": "assets/patron-in-chief/6. Associate Dean - Sridharan.jpg.jpeg",
-      "title": "Associate Dean, SASHE"
+      "title": "Associate Dean, SASHE",
+      "affiliation": "SASTRA Deemed to be University, Thanjavur"
     }
   ],
   "teachingExperts": [
