@@ -96,10 +96,10 @@ up.`,
       category: 'Advanced Courses',
       courses: [
         {
-          title: 'Introduction to the Basic Homological Algebra - II',
+          title: 'Morita Theory, Derived Equivalences, and Tate–Hochschild Homology in the Module category',
           subCourses: [
             {
-              title: 'Introduction to the Basic Homological Algebra - II',
+              title: 'Morita Theory, Derived Equivalences, and Tate–Hochschild Homology in the Module category - I',
               duration: '1 hour',
               lecturer: 'Bernhard Keller',
               abstract: `We will consider equivalences between module categories and explain Morita theory. We will introduce the 
@@ -109,7 +109,7 @@ coming from equivalences between module categories. We will present Rickard's th
 framework for the study of such equivalences which is analogous to Morita theory. `,
             },
             {
-              title: 'Introduction to the Basic Homological Algebra  - II',
+              title: 'Morita Theory, Derived Equivalences, and Tate–Hochschild Homology in the Module category - II',
               duration: '1 hour',
               lecturer: 'Umamaheswaran Arunachalam',
               abstract: `In the continuation of the basic level course, we study the Tate homology, stable homology and unbounded 
@@ -119,10 +119,10 @@ for general Noetherian algebras and for Gorenstein algebras.`,
           ],
         },
         {
-          title: 'Surface combinatorics for categories of modules - II',
+          title: 'Surface Dissections and Gentle Algebras: A Geometric Approach to Module Categories',
           subCourses: [
             {
-              title: 'Surface combinatorics for categories of modules - II',
+              title: 'Surface Dissections and Gentle Algebras: A Geometric Approach to Module Categories - I',
               duration: '2 hours',
               lecturer: 'Karin Baur',
               abstract: `In these lectures, we explain how surface dissections define (gentle) algebras, we will discuss the module 
@@ -133,10 +133,10 @@ morphisms between objects or to the so-called Auslander-Reiten translation in th
           ],
         },
         {
-          title: 'Introduction to Leavitt path algebras - II',
+          title: 'Graded Automorphisms and Zhang Twists of Leavitt Path Algebras.',
           subCourses: [
             {
-              title: 'Introduction to Leavitt path algebras - II',
+              title: 'Graded Automorphisms and Zhang Twists of Leavitt Path Algebras - I',
               duration: '2 hours',
               lecturer: 'Ashish K Srivatsva',
               abstract: `We will discuss the construction of graded automorphisms of Leavitt path algebras and as an application study Zhang 
@@ -149,7 +149,7 @@ helps us construct new classes of irreducible representations.`,
           title: 'Commutative algebra inspired by modularity lifting - II',
           subCourses: [
             {
-              title: 'Commutative algebra inspired by modularity lifting - II',
+              title: 'Commutative algebra inspired by modularity lifting',
               duration: '2 hours',
               lecturer: 'Srikanth Iyengar',
               abstract: `The goal of my lecture series is to present from the Introductory course results, and their extensions that were 
@@ -161,17 +161,17 @@ Atiyah and Macdonald, and basic homological algebra.`,
           ],
         },
         {
-          title: 'Special values of Modular L-functions; integral and half-integral - II',
+          title: 'Cohomological Methods for Special Values of Modular L-Functions, Iwasawa Algebras in Algebraic Number Theory',
           subCourses: [
             {
-              title: 'Special values of Modular L-functions; integral and half-integral - II',
+              title: 'Cohomological Methods for Special Values of Modular L-Functions, Iwasawa Algebras in Algebraic Number Theory - I',
               duration: '2 hours',
               lecturer: 'Sanoli Gun',
               abstract: `We will discuss aspects of cohomology theory relevant to special values of modular L-functions both in the integral and 
 half-integral set up, especially at points inside the critical strip.`,
             },
             {
-              title: 'Iwasawa Theory with Homological algebra and its arithmetic - II',
+              title: '5.	Cohomological Methods for Special Values of Modular L-Functions, Iwasawa Algebras in Algebraic Number Theory - II',
               duration: '2 hours',
               lecturer: 'Sujatha Ramdorai',
               abstract: `We will  define Auslander regular local domains for Non-commutative left and right Noetherian domains, We will then 
@@ -199,7 +199,7 @@ analogue of the Auslander-Buchsbaum theorem in this setting.`,
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <h4 class="card-title">${course.title}</h4>
+          <h2 class="card-title">${course.title}</h4>
           <div>
             <button class="contact-button mt-2 w-full" data-category="${catIdx}" data-idx="${idx}">View Sub-Courses</button>
           </div>
