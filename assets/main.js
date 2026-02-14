@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Introductory Courses',
       courses: [
         {
-          title: 'An introduction to the Basic Homological Algebra - I',
+          title: 'An introduction to the Basic Homological Algebra',
           subCourses: [
             {
-              title: 'An introduction to the Basic Homological Algebra - I',
+              title: 'An introduction to the Basic Homological Algebra',
               duration: '2 hours',
               lecturer: 'Bernhard Keller',
               abstract: `After a reminder on the basic language of categories and functors, we will introduce the notions of projectivity and 
@@ -18,7 +18,7 @@ Ext. We will illustrate the notions and constructions using examples from the re
 of path algebras of quivers.`,
             },
             {
-              title: 'An introduction to Homological algebra and its dimension - I',
+              title: 'An introduction to Homological algebra and its dimension',
               duration: '2 hours',
               lecturer: 'Sujatha Ramdorai',
               abstract: `Building on the introductory  lectures in Homological Algebra, we will visit  the properties of projective 
@@ -26,7 +26,7 @@ dimension, injective dimension, global dimension  and Krull dimension of commuta
 the Auslander-Buchsbaum theorem for regular local rings and give examples.`,
             },
             {
-              title: 'An introduction to Tate-homology and cohomology of Modules - I',
+              title: 'An introduction to Tate-homology and cohomology of Modules',
               duration: '1 hour',
               lecturer: 'Umamaheswaran Arunachalam',
               abstract: ` Introduction of Tate-homology, stable homology, unbounded homology and cohomology of modules with some 
@@ -35,10 +35,10 @@ standard theorems.`,
           ],
         },
         {
-          title: 'Surface combinatorics for categories of modules - I',
+          title: 'Surface combinatorics for categories of modules',
           subCourses: [
             {
-              title: 'Surface combinatorics for categories of modules - I',
+              title: 'Surface combinatorics for categories of modules',
               duration: '2 hours',
               lecturer: 'Karin Baur',
               abstract: `Surface combinatorics have been instrumental in describing algebraic structures. In these lectures, I will 
@@ -50,10 +50,10 @@ and also to relations among the paths in the quiver. `,
           ],
         },
         {
-          title: 'Introduction to Leavitt path algebras - I',
+          title: 'Introduction to Leavitt path algebras',
           subCourses: [
             {
-              title: 'Introduction to Leavitt path algebras - I',
+              title: 'Introduction to Leavitt path algebras',
               duration: '2 hours',
               lecturer: 'Ashish K Srivastava',
               abstract: `We will introduce Leavitt path algebras and discuss the motivation behind their study. We will characterize 
@@ -79,10 +79,10 @@ modules.`,
           ],
         },
         {
-          title: 'Special values of Modular L-functions; integral and half-integral - I',
+          title: 'Special values of Modular L-functions; integral and half-integral',
           subCourses: [
             {
-              title: 'Special values of Modular L-functions; integral and half-integral - I',
+              title: 'Special values of Modular L-functions; integral and half-integral',
               duration: '2 hours',
               lecturer: 'Sanoli Gun',
               abstract: `We shall discuss special values as well growth of modular L-functions, both in the integral and half-integral set 
