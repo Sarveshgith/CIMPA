@@ -1112,6 +1112,16 @@
               Homological Methods in Noncommutative Algebra and Number Theory
             </span>
           </h1>
+          
+          <div class="flex justify-center mt-3">
+            <span class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm border border-green-200">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              In-Person Event
+            </span>
+          </div>
         </div>
 
         <!-- Event Information Cards -->
@@ -1576,11 +1586,44 @@ subsequently. The prize is given every year on 22nd December.
     </section>
 
     <script>
+      // Inline sponsors data
+      const sponsorsData = {
+        "sponsors": [
+          {
+            "logo": "assets/sponsors/cimpa-carre.png",
+            "name": "Academic Partner"
+          },
+          {
+            "logo": "assets/sponsors/cnrs.jpg.jpeg",
+            "name": "Technology Corp"
+          },
+          {
+            "logo": "assets/sponsors/I2M.png",
+            "name": "Innovation Foundation"
+          },
+          {
+            "logo": "assets/sponsors/BMBF Logo.png",
+            "name": "Innovation Foundation"
+          },
+          {
+            "logo": "assets/sponsors/CMI Logo.png",
+            "name": "Innovation Foundation"
+          },
+          {
+            "logo": "assets/sponsors/compositio_mathematica.jpg.jpeg",
+            "name": "Innovation Foundation"
+          },
+          {
+            "logo": "assets/sponsors/SASTRA Logo.png",
+            "name": "Research Institute"
+          }
+        ]
+      };
+
       // Load and render sponsors dynamically
       async function loadSponsors() {
         try {
-          const response = await fetch('assets/sponsors.json');
-          const data = await response.json();
+          const data = sponsorsData;
           
           // Function to create sponsor logo
           function createSponsorLogo(sponsor) {
@@ -1608,11 +1651,64 @@ subsequently. The prize is given every year on 22nd December.
         }
       }
       
+      // Inline people data
+      const peopleData = {
+        "scientificCommittee": [
+          {"name": "Henning Krause", "affiliation": "Universität Bielefeld, Bielefeld"},
+          {"name": "Bernhard Keller", "affiliation": "Université Paris Cité, Paris"},
+          {"name": "Krishnaswami Alladi", "affiliation": "University of Florida, Gainesville"},
+          {"name": "Michel Waldschmidt", "affiliation": "Sorbonne Université, Institut de Mathématiques de Jussieu (UMR 7586 du CNRS), Paris"},
+          {"name": "Ken Ono", "affiliation": "University of Virginia, Charlottesville"},
+          {"name": "Sujatha Ramdorai", "affiliation": "University of British Columbia, Vancouver"},
+          {"name": "Claudia Polini", "affiliation": "University of Notre Dame, Notre Dame"},
+          {"name": "Andrea Solotar", "affiliation": "University of Buenos Aires, Autónoma de Buenos Aires"},
+          {"name": "Ravindranathan Thangadurai", "affiliation": "Harish-Chandra Research Institute, Prayagraj"},
+          {"name": "B. Sury", "affiliation": "ISI, Bangalore"}
+        ],
+        "advisoryCommittee": [
+          {"name": "Prof. R. Sethuraman", "image": "assets/patron-in-chief/1. Prof. Sethuraman.png", "title": "Chancellor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Prof. S. Vaidhyasubramaniam", "image": "assets/patron-in-chief/2. VC.png", "title": "Vice Chancellor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Prof. R. Chandramouli", "image": "assets/patron-in-chief/3. The Registrar.png", "title": "The Registrar", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Prof. S. Swaminathan", "image": "assets/patron-in-chief/4. Planning and development.png", "title": "Dean Planning and Development", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Prof. K. Umamaheswari", "image": "assets/patron-in-chief/5. Dean - Umamaheswari.jpg.jpeg", "title": "Dean SASHE", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Prof. M. Sridharan", "image": "assets/patron-in-chief/6. Associate Dean - Sridharan.jpg.jpeg", "title": "Associate Dean, SASHE", "affiliation": "SASTRA Deemed to be University, Thanjavur"}
+        ],
+        "teachingExperts": [
+          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "description": "Bernhard Keller is a professor at Université Paris Cité. In his research, he applies representation theory and homological algebra to the study of cluster algebras."},
+          {"name": "Sujatha Ramdorai", "image": "assets/imgs/Sujatha Ramdorai.jpg", "description": "Currently holding a Canada Research Chair position at the University of British Columbia, Canada. Prior to this, was a Professor at Tata Institute of Fundamental research. Areas of interest include Algebraic Number Theory, Iwasawa theory of elliptic curves over noncommutative p-adic Lie extensions."},
+          {"name": "Ashish K Srivastava", "image": "assets/imgs/Ashish.JPG", "description": "Ashish K Srivastava is a Professor of Mathematics at Saint Louis University, USA. His research interests include Noncommutative Algebra, and Combinatorial Algebra. He is an author of two research monographs: one published in the London Math Society Lecture Notes series of Cambridge University Press and the other in Oxford Mathematical Monographs Series of Oxford University Press. Dr Srivastava has published more than 45 research articles, and his research has been partially funded by Simons Foundation. He has served in the American Mathematical Society committee on human rights of mathematicians and is currently serving on the editorial board of the Journal of Algebra and its Applications."},
+          {"name": "Sanoli Gun", "image": "assets/imgs/Sanoli Gun-Photo.jpg", "description": "Sanoli Gun is a Professor of Mathematics at the Institute of Mathematical Sciences. She works in Number Theory and in particular, modular forms, special values of L-functions, transcendence and analytic theory of algebraic numbers."},
+          {"name": "Srikanth B. Iyengar", "image": "assets/imgs/photoNormal.jpeg.jpg", "description": "Srikanth Iyengar grew up in Hyderabad, India, and was granted a Bachelor of Technology in Computer Science, by the Indian Institute of Technology at Madras. He went on to study Mathematics, and earned an M.S. (1994) and a Ph. D. (1998) from Purdue University, West Lafayette. After various post-doctoral positions, and a long stint as a faculty member at the University of Nebraska-Lincoln, he joined the Department of Mathematics at the University of Utah in 2014. Srikanth's main research interest is commutative algebra, but he often borrows techniques from algebraic topology and representation theory. He has also returned that favor by applying ideas from commutative algebra to solve problems arising in the modular representation theory of finite groups, and, more recently, in algebraic number theory."},
+          {"name": "Karin Baur", "image": "assets/imgs/KM_Baur Karin.jpg", "description": "Originally from Switzerland, Karin Baur is a professor at the Ruhr University Bochum. My research lies in algebraic, geometric and combinatorial methods in representation theory. Current research interests are in cluster algebras and cluster categories, in frieze patterns, surface combinatorics."},
+          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "description": "Umamaheswaran Arunachalam is an Assistant Professor of Mathematics at SASTRA Deemed University, Thanjavur. His research interests include study of Rings and categories of Modules, Homological Algebra, Cluster Algebras, Lie algebras, Representation theory of finite dimensional algebras."}
+        ],
+        "coordinators": [
+          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "title": "Professor - Université Paris Cité, Paris"},
+          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "title": "Assistant Professor - SASTRA Deemed to be University, Thanjavur"}
+        ],
+        "scientificOfficer": {
+          "name": "Olivier Ramaré", "image": "assets/imgs/OR2017-Triglav.png", "title": "Scientific Officer", "affiliation": "Aix-Marseille Université, Marseille, France"
+        },
+        "localOrganisers": [
+          {"name": "Srikanth Raghavendran", "image": "assets/imgs/Srikanth Photo.jpeg", "title": "Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Punitha Batra", "image": "assets/imgs/Punitha Batra.png", "title": "Professor H", "affiliation": "Harish-Chandra Research Institute, Prayagraj"},
+          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "title": "Assistant Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
+          {"name": "Dhanasekaran Ponnialagan", "image": "assets/imgs/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png", "title": "Assistant Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"}
+        ],
+        "internationalOrganisers": [
+          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "title": "Professor", "affiliation": "Université Paris Cité, Paris"},
+          {"name": "Ashish K Srivastava", "image": "assets/imgs/Ashish.JPG", "title": "Professor", "affiliation": "Saint Louis University, Saint Louis"},
+          {"name": "Sujatha Ramdorai", "image": "assets/imgs/Sujatha Ramdorai.jpg", "title": "Professor", "affiliation": "University of British Columbia, Canada"},
+          {"name": "Srikanth B. Iyengar", "image": "assets/imgs/photoNormal.jpeg.jpg", "title": "Professor", "affiliation": "University of Utah, Utah"},
+          {"name": "Karin Baur", "image": "assets/imgs/KM_Baur Karin.jpg", "title": "Professor", "affiliation": "Ruhr University Bochum, Bochum"},
+          {"name": "Sanoli Gun", "image": "assets/imgs/Sanoli Gun-Photo.jpg", "title": "Professor", "affiliation": "Institute of Mathematical Sciences (IMSc), Chennai"}
+        ]
+      };
+
       // Load and render people data (teaching experts, coordinators, organisers)
       async function loadPeople() {
         try {
-          const response = await fetch('assets/ppl.json');
-          const data = await response.json();
+          const data = peopleData;
           
           // Render Teaching Experts
           const teachingExpertsContainer = document.getElementById('teachingExpertsContainer');
