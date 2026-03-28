@@ -1570,6 +1570,38 @@ subsequently. The prize is given every year on 22nd December.
       </div>
     </section>
 
+    <!-- Accommodation Section -->
+    <section id="accommodation" class="section bg-gradient-to-br from-blue-50 to-indigo-50 py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Accommodation</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg max-w-3xl mx-auto">
+          Comfortable and convenient accommodation options for CIMPA School participants
+        </p>
+
+        <!-- Carousel Container -->
+        <div class="max-w-5xl mx-auto">
+          <div class="accommodation-carousel-wrapper relative">
+            <div id="accommodationCarousel" class="accommodation-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4">
+              <!-- Accommodations will be loaded dynamically -->
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg" aria-label="Previous accommodation">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            
+            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg" aria-label="Next accommodation">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sponsors Section -->
     <section id="sponsors" class="section bg-white py-20">
       <div class="container mx-auto px-4">
@@ -1586,44 +1618,14 @@ subsequently. The prize is given every year on 22nd December.
     </section>
 
     <script>
-      // Inline sponsors data
-      const sponsorsData = {
-        "sponsors": [
-          {
-            "logo": "assets/sponsors/cimpa-carre.png",
-            "name": "Academic Partner"
-          },
-          {
-            "logo": "assets/sponsors/cnrs.jpg.jpeg",
-            "name": "Technology Corp"
-          },
-          {
-            "logo": "assets/sponsors/I2M.png",
-            "name": "Innovation Foundation"
-          },
-          {
-            "logo": "assets/sponsors/BMBF Logo.png",
-            "name": "Innovation Foundation"
-          },
-          {
-            "logo": "assets/sponsors/CMI Logo.png",
-            "name": "Innovation Foundation"
-          },
-          {
-            "logo": "assets/sponsors/compositio_mathematica.jpg.jpeg",
-            "name": "Innovation Foundation"
-          },
-          {
-            "logo": "assets/sponsors/SASTRA Logo.png",
-            "name": "Research Institute"
-          }
-        ]
-      };
-
       // Load and render sponsors dynamically
       async function loadSponsors() {
         try {
-          const data = sponsorsData;
+          const response = await fetch('assets/sponsors.json');
+          if (!response.ok) {
+            throw new Error(`Failed to load sponsors.json: ${response.status}`);
+          }
+          const data = await response.json();
           
           // Function to create sponsor logo
           function createSponsorLogo(sponsor) {
@@ -1648,6 +1650,65 @@ subsequently. The prize is given every year on 22nd December.
           
         } catch (error) {
           console.error('Error loading sponsors:', error);
+        }
+      }
+
+      // Load and render accommodation carousel
+      async function loadAccommodation() {
+        try {
+          // Fetch accommodation data from JSON file
+          const response = await fetch('assets/accommodation.json');
+          const data = await response.json();
+          
+          // Function to create accommodation card
+          function createAccommodationCard(accommodation) {
+            const card = document.createElement('div');
+            card.className = 'accommodation-card';
+            
+            card.innerHTML = `
+              <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image" loading="lazy" />
+              <div class="accommodation-overlay">
+                <div class="accommodation-overlay-content">
+                  <h3 class="accommodation-title">${accommodation.name}</h3>
+                  <p class="accommodation-description">${accommodation.description}</p>
+                  <p class="accommodation-amenities"><strong>Amenities:</strong> ${accommodation.amenities}</p>
+                </div>
+              </div>
+            `;
+            
+            return card;
+          }
+          
+          // Render all accommodations in carousel
+          const carousel = document.getElementById('accommodationCarousel');
+          
+          if (data.accommodations && data.accommodations.length > 0) {
+            data.accommodations.forEach(accommodation => {
+              carousel.appendChild(createAccommodationCard(accommodation));
+            });
+          }
+          
+          // Carousel navigation functionality
+          const prevBtn = document.getElementById('prevBtn');
+          const nextBtn = document.getElementById('nextBtn');
+          const scrollAmount = Math.max(360, Math.floor(carousel.clientWidth * 0.75));
+          
+          prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+              left: -scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+          
+          nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+          
+        } catch (error) {
+          console.error('Error loading accommodation:', error);
         }
       }
       
@@ -1865,10 +1926,12 @@ subsequently. The prize is given every year on 22nd December.
       // Load all data when DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+          loadAccommodation();
           loadSponsors();
           loadPeople();
         });
       } else {
+        loadAccommodation();
         loadSponsors();
         loadPeople();
       }
