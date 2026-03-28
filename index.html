@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,56 +10,117 @@
       name="description"
       content="CIMPA School 2026 - Homological Methods in Noncommutative Algebra and Number theory at SASTRA University, July 06-17, 2026"
     />
-    <meta name="keywords" content="CIMPA, Mathematics, Algebra, Number Theory, Homological Methods, SASTRA University, Research School" />
+    <meta
+      name="keywords"
+      content="CIMPA, Mathematics, Algebra, Number Theory, Homological Methods, SASTRA University, Research School"
+    />
     <meta name="author" content="SASTRA Deemed University" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="CIMPA 2026 - International Mathematics School" />
-    <meta property="og:description" content="Homological Methods in Noncommutative Algebra and Number Theory at SASTRA University, July 06-17, 2026" />
+    <meta
+      property="og:description"
+      content="Homological Methods in Noncommutative Algebra and Number Theory at SASTRA University, July 06-17, 2026"
+    />
     <meta property="og:image" content="assets/imgs/CIMPA_Poster.jpg" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CIMPA 2026 - International Mathematics School" />
-    <meta name="twitter:description" content="Homological Methods in Noncommutative Algebra and Number Theory at SASTRA University, July 06-17, 2026" />
+    <meta
+      name="twitter:description"
+      content="Homological Methods in Noncommutative Algebra and Number Theory at SASTRA University, July 06-17, 2026"
+    />
     <meta name="twitter:image" content="assets/imgs/CIMPA_Poster.jpg" />
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>CIMPA 2026 - International Mathematics School | SASTRA University</title>
-    
+
     <!-- Load Tailwind CSS synchronously (blocking) to prevent FOUC -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Fallback: Add minimal critical CSS for Tailwind utilities if CDN fails -->
     <style>
       /* Tailwind CDN Fallback - Critical utilities */
-      .container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
-      @media (min-width: 640px) { .container { max-width: 640px; } }
-      @media (min-width: 768px) { .container { max-width: 768px; } }
-      @media (min-width: 1024px) { .container { max-width: 1024px; } }
-      @media (min-width: 1280px) { .container { max-width: 1280px; } }
-      .flex { display: flex; }
-      .hidden { display: none; }
-      .fixed { position: fixed; }
-      .relative { position: relative; }
-      .mx-auto { margin-left: auto; margin-right: auto; }
-      .space-x-2 > * + * { margin-left: 0.5rem; }
-      .space-x-3 > * + * { margin-left: 0.75rem; }
-      .space-x-4 > * + * { margin-left: 1rem; }
-      .space-y-4 > * + * { margin-top: 1rem; }
-      .rounded-lg { border-radius: 0.5rem; }
-      .px-4 { padding-left: 1rem; padding-right: 1rem; }
-      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-      .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+      .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1280px;
+        }
+      }
+      .flex {
+        display: flex;
+      }
+      .hidden {
+        display: none;
+      }
+      .fixed {
+        position: fixed;
+      }
+      .relative {
+        position: relative;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .space-x-2 > * + * {
+        margin-left: 0.5rem;
+      }
+      .space-x-3 > * + * {
+        margin-left: 0.75rem;
+      }
+      .space-x-4 > * + * {
+        margin-left: 1rem;
+      }
+      .space-y-4 > * + * {
+        margin-top: 1rem;
+      }
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
     </style>
-    
+
     <!-- Load external stylesheet after Tailwind -->
     <link rel="stylesheet" href="assets/style.css" />
-    
+
     <style>
       * {
         font-family: 'Source Sans 3', sans-serif;
@@ -97,6 +158,100 @@
 
       .nav-link:hover::after {
         width: 100%;
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-wrapper {
+        position: relative;
+      }
+
+      .dropdown-toggle {
+        position: relative;
+        color: #2563eb;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .dropdown-toggle:hover {
+        color: #1e40af;
+        background: #e0ecff;
+      }
+
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .dropdown-wrapper.active .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 60;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .dropdown-wrapper.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-menu a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: #374151;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .dropdown-menu a:first-child {
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
+
+      .dropdown-menu a:last-child {
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+
+      .dropdown-menu a:hover {
+        background: #e0ecff;
+        color: #2563eb;
+        border-left-color: #2563eb;
+        padding-left: 1.25rem;
+      }
+
+      .dropdown-menu a svg {
+        width: 1rem;
+        height: 1rem;
+        color: #6b7280;
+      }
+
+      .dropdown-menu a:hover svg {
+        color: #2563eb;
       }
 
       /* Mobile Navigation */
@@ -251,7 +406,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+        background:
+          radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
           radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.3), transparent 50%),
           radial-gradient(circle at 40% 20%, rgba(72, 118, 255, 0.2), transparent 50%);
         animation: gradientShift 15s ease infinite;
@@ -306,7 +462,9 @@
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         border-radius: 24px;
-        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.5);
+        box-shadow:
+          0 20px 60px rgba(102, 126, 234, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.5);
         animation: fadeInUp 1s ease-out;
       }
 
@@ -674,7 +832,7 @@
           font-size: 1.75rem;
           margin-bottom: 2rem;
         }
-        
+
         .hero-subtitle {
           font-size: 0.875rem;
         }
@@ -897,7 +1055,7 @@
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300 overflow-x-auto"
+      class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300"
     >
       <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
@@ -939,117 +1097,150 @@
                 <span>Home</span>
               </span>
             </a>
-            <a
-              href="#about"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <span>About</span>
-              </span>
-            </a>
-            <a
-              href="#theme-scope"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  ></path>
-                </svg>
-                <span>Theme & Scope</span>
-              </span>
-            </a>
-            <a
-              href="#courses"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  ></path>
-                </svg>
-                <span>Courses</span>
-              </span>
-            </a>
-            <a
-              href="#organizers"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"
-                />
-              </svg>
-              <span>Organizing Committee</span>
-            </a>
-            <a
-              href="#teaching-experts"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5"
-                />
-              </svg>
-              <span>Teaching Experts</span>
-            </a>
-            <a
-              href="#accommodation"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 10h18M5 10V8a2 2 0 012-2h10a2 2 0 012 2v2m-1 0v4m-12-4v4m-2 0h16v2H4v-2z"
-                  />
-                </svg>
-                <span>Accommodation</span>
-              </span>
-            </a>
-            <div class="w-px h-6 bg-gray-300 mx-2"></div>
-            <a
-              href="timetable.html"
-              class="nav-link px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-blue-700"
-            >
-              <span class="flex items-center space-x-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-                </svg>
-                <span>Schedule</span>
-              </span>
-            </a>
+
+            <!-- About Dropdown -->
+            <div class="dropdown-wrapper">
+              <button class="dropdown-toggle">
+                <span class="flex items-center space-x-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>About</span>
+                  <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#about">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>About School</span>
+                </a>
+                <a href="#theme-scope">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                  <span>Theme & Scope</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Program Dropdown -->
+            <div class="dropdown-wrapper">
+              <button class="dropdown-toggle">
+                <span class="flex items-center space-x-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    ></path>
+                  </svg>
+                  <span>Program</span>
+                  <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#courses">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    ></path>
+                  </svg>
+                  <span>Courses</span>
+                </a>
+                <a href="#teaching-experts">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5"
+                    ></path>
+                  </svg>
+                  <span>Teaching Experts</span>
+                </a>
+                <a href="#organizers">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"
+                    ></path>
+                  </svg>
+                  <span>Organizing Committee</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Resources Dropdown -->
+            <div class="dropdown-wrapper">
+              <button class="dropdown-toggle">
+                <span class="flex items-center space-x-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                  <span>Resources</span>
+                  <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#accommodation">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 10h18M5 10V8a2 2 0 012-2h10a2 2 0 012 2v2m-1 0v4m-12-4v4m-2 0h16v2H4v-2z"
+                    ></path>
+                  </svg>
+                  <span>Accommodation</span>
+                </a>
+                <a href="timetable.html">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <span>Schedule</span>
+                </a>
+              </div>
+            </div>
+
             <a
               href="#registration"
               class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-2"
@@ -1102,7 +1293,9 @@
         <div class="flex flex-col md:flex-row justify-center items-center mb-8 gap-4 md:gap-8 lg:gap-12">
           <!-- CIMPA Logo -->
           <div class="flex flex-col items-center justify-center">
-            <div class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-blue-100/50">
+            <div
+              class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-blue-100/50"
+            >
               <img
                 src="assets/imgs/cimpa-long-cmjn-1.png"
                 alt="CIMPA Logo"
@@ -1111,15 +1304,17 @@
               />
             </div>
           </div>
-          
+
           <!-- Vertical Divider (hidden on mobile, shown on desktop) -->
           <div class="hidden md:flex items-center">
             <div class="w-px h-24 lg:h-28 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent"></div>
           </div>
-          
+
           <!-- SASTRA Logo -->
           <div class="flex flex-col items-center justify-center">
-            <div class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-purple-100/50">
+            <div
+              class="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-purple-100/50"
+            >
               <img
                 src="assets/imgs/sastralogo.jpg"
                 alt="SASTRA University Logo"
@@ -1135,18 +1330,30 @@
           <p class="hero-subtitle text-base md:text-lg font-medium italic">
             Centre International de Mathématiques Pures et Appliquées
           </p>
-          
+
           <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight px-4">
             <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Homological Methods in Noncommutative Algebra and Number Theory
             </span>
           </h1>
-          
+
           <div class="flex justify-center mt-3">
-            <span class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm border border-green-200">
+            <span
+              class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm border border-green-200"
+            >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
               </svg>
               In-Person Event
             </span>
@@ -1156,25 +1363,51 @@
         <!-- Event Information Cards -->
         <div class="flex flex-col items-center gap-3 mb-8">
           <div class="flex flex-wrap items-center justify-center gap-3">
-            <div class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-blue-100">
+            <div
+              class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-blue-100"
+            >
               <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
               </svg>
               <span class="text-sm font-semibold text-gray-800">SASTRA Deemed University</span>
             </div>
-            
-            <div class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-purple-100">
+
+            <div
+              class="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-sm border border-purple-100"
+            >
               <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
               </svg>
               <span class="text-sm font-semibold text-gray-800">Thanjavur, Tamil Nadu, India</span>
             </div>
           </div>
-          
-          <div class="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 px-5 py-3 rounded-lg shadow-sm border border-blue-200/50">
+
+          <div
+            class="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 px-5 py-3 rounded-lg shadow-sm border border-blue-200/50"
+          >
             <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
             <span class="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               July 06-17, 2026
@@ -1184,9 +1417,7 @@
 
         <!-- CTA Button -->
         <div class="mt-6">
-          <a href="#registration" class="hero-button" role="button" tabindex="0">
-            Register Now
-          </a>
+          <a href="#registration" class="hero-button" role="button" tabindex="0"> Register Now </a>
         </div>
 
         <!-- Program Highlights -->
@@ -1239,10 +1470,11 @@
       <div class="container mx-auto px-4">
         <h2 class="section-title">About SASTRA University</h2>
         <div class="max-w-6xl mx-auto space-y-8">
-          
           <!-- College Image -->
           <div class="flex justify-center">
-            <div class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:shadow-3xl inline-block">
+            <div
+              class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:shadow-3xl inline-block"
+            >
               <img
                 src="assets/imgs/Sastra_bg.jpg"
                 alt="SASTRA Deemed to be University Campus - Main Building and Grounds"
@@ -1251,7 +1483,9 @@
                 width="1200"
                 height="800"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent pointer-events-none"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent pointer-events-none"
+              ></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-blue-900/80 to-transparent">
                 <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
                   SASTRA Deemed to be University
@@ -1262,61 +1496,56 @@
               </div>
             </div>
           </div>
-          
+
           <!-- College Description -->
           <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
             <!-- Main Description -->
             <div class="card space-y-4">
               <h4 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">Excellence in Education</h4>
               <p class="card-text">
-                With a humble beginning in the year 1984, SASTRA's progress in the last 40 years is a 
-testimony to its commitment to building a University as envisaged in its guiding model. 
-Today, SASTRA is one of India's premier institutions offering undergraduate, 
-postgraduate & doctoral programmes in Engineering, Management, Law, Sciences, 
-Humanities and Education. It was conferred Deemed-to-be-University status in 2001 by 
-the University Grants Commission under Section 3 of the UGC Act 1956. SASTRA also 
-has an MHRD-notified off-campus named Srinivasa Ramanujan Centre (SRC) at 
-Kumbakonam. 
+                With a humble beginning in the year 1984, SASTRA's progress in the last 40 years is a testimony to its
+                commitment to building a University as envisaged in its guiding model. Today, SASTRA is one of India's
+                premier institutions offering undergraduate, postgraduate & doctoral programmes in Engineering,
+                Management, Law, Sciences, Humanities and Education. It was conferred Deemed-to-be-University status in
+                2001 by the University Grants Commission under Section 3 of the UGC Act 1956. SASTRA also has an
+                MHRD-notified off-campus named Srinivasa Ramanujan Centre (SRC) at Kumbakonam.
               </p>
               <p class="card-text">
-                As a comprehensive University, its teaching programmes are complemented by 
-research engagements, consultancy assignments, training, and extension activities. It 
-had been re-accredited by NAAC (fourth cycle) with a maximum grade of 'A++' 
-(3.76/4.00) and is a Category I Institution based on the UGC's categorization of 
-Universities for Graded Autonomy Regulations, 2018. Twelve engineering programmes 
-of SASTRA have been internationally accredited for a period of 9 years by the Institution 
-of Engineering & Technology (IET), UK recognizing SASTRA's academic excellence. 
+                As a comprehensive University, its teaching programmes are complemented by research engagements,
+                consultancy assignments, training, and extension activities. It had been re-accredited by NAAC (fourth
+                cycle) with a maximum grade of 'A++' (3.76/4.00) and is a Category I Institution based on the UGC's
+                categorization of Universities for Graded Autonomy Regulations, 2018. Twelve engineering programmes of
+                SASTRA have been internationally accredited for a period of 9 years by the Institution of Engineering &
+                Technology (IET), UK recognizing SASTRA's academic excellence.
               </p>
             </div>
-            
+
             <!-- Cultural Context & Quick Facts -->
             <div class="space-y-6">
               <div class="card">
                 <h4 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">SASTRA Ramanujan Award</h4>
                 <p class="card-text">
-                  SASTRA has instituted the SASTRA-RAMANUJAN AWARD comprising $10,000 and a 
-citation for outstanding researchers all over the world under the age of 32, since 2005. 
-This award has been instituted with a view to embolden young minds to pursue 
-cutting-edge research in Mathematics influenced by Srinivasa Ramanujan and increase 
-the visibility of Mathematics both at the national and international levels. The prize has 
-established itself as one of the most prominent and coveted international awards. Six 
-out of the 21 SASTRA Ramanujan awardees have gone on to win the Fields Medal 
-subsequently. The prize is given every year on 22nd December. 
+                  SASTRA has instituted the SASTRA-RAMANUJAN AWARD comprising $10,000 and a citation for outstanding
+                  researchers all over the world under the age of 32, since 2005. This award has been instituted with a
+                  view to embolden young minds to pursue cutting-edge research in Mathematics influenced by Srinivasa
+                  Ramanujan and increase the visibility of Mathematics both at the national and international levels.
+                  The prize has established itself as one of the most prominent and coveted international awards. Six
+                  out of the 21 SASTRA Ramanujan awardees have gone on to win the Fields Medal subsequently. The prize
+                  is given every year on 22nd December.
                 </p>
               </div>
-              
+
               <!-- Quick Facts -->
               <div class="card">
                 <h4 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">Cultural Heritage</h4>
                 <p class="card-text">
-                  Thanjavur, the cultural capital of Tamil Nadu and home to the magnificent Brihadeeswarar Temple 
-                  (a UNESCO World Heritage Site), offers participants a unique blend of academic rigor and rich 
-                  cultural heritage, making this CIMPA School an enriching experience both intellectually and culturally.
+                  Thanjavur, the cultural capital of Tamil Nadu and home to the magnificent Brihadeeswarar Temple (a
+                  UNESCO World Heritage Site), offers participants a unique blend of academic rigor and rich cultural
+                  heritage, making this CIMPA School an enriching experience both intellectually and culturally.
                 </p>
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
@@ -1326,12 +1555,13 @@ subsequently. The prize is given every year on 22nd December.
       <div class="container mx-auto px-4">
         <h2 class="section-title">Objective</h2>
         <div class="max-w-6xl mx-auto space-y-8">
-          
           <!-- Theme -->
           <div class="card">
             <h3 class="card-title text-2xl mb-6 flex items-center">
               <svg class="w-8 h-8 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+                <path
+                  d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+                ></path>
               </svg>
               Theme
             </h3>
@@ -1346,7 +1576,9 @@ subsequently. The prize is given every year on 22nd December.
               </div>
               <div class="flex items-start">
                 <span class="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 mr-4"></span>
-                <p class="card-text">Computational and experimental approaches to problems in Number Theory and Representation Theory.</p>
+                <p class="card-text">
+                  Computational and experimental approaches to problems in Number Theory and Representation Theory.
+                </p>
               </div>
               <div class="flex items-start">
                 <span class="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 mr-4"></span>
@@ -1359,7 +1591,11 @@ subsequently. The prize is given every year on 22nd December.
           <div class="card">
             <h3 class="card-title text-2xl mb-6 flex items-center">
               <svg class="w-8 h-8 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
               Scope
             </h3>
@@ -1389,7 +1625,6 @@ subsequently. The prize is given every year on 22nd December.
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -1610,18 +1845,29 @@ subsequently. The prize is given every year on 22nd December.
         <!-- Carousel Container -->
         <div class="max-w-5xl mx-auto">
           <div class="accommodation-carousel-wrapper relative">
-            <div id="accommodationCarousel" class="accommodation-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4">
+            <div
+              id="accommodationCarousel"
+              class="accommodation-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4"
+            >
               <!-- Accommodations will be loaded dynamically -->
             </div>
-            
+
             <!-- Navigation Buttons -->
-            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg" aria-label="Previous accommodation">
+            <button
+              id="prevBtn"
+              class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg"
+              aria-label="Previous accommodation"
+            >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
-            
-            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg" aria-label="Next accommodation">
+
+            <button
+              id="nextBtn"
+              class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg"
+              aria-label="Next accommodation"
+            >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -1640,7 +1886,10 @@ subsequently. The prize is given every year on 22nd December.
         </p>
 
         <!-- Sponsors Grid -->
-        <div id="sponsorsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 max-w-6xl mx-auto items-center justify-items-center">
+        <div
+          id="sponsorsGrid"
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 max-w-6xl mx-auto items-center justify-items-center"
+        >
           <!-- Sponsors will be loaded dynamically -->
         </div>
       </div>
@@ -1655,28 +1904,28 @@ subsequently. The prize is given every year on 22nd December.
             throw new Error(`Failed to load sponsors.json: ${response.status}`);
           }
           const data = await response.json();
-          
+
           // Function to create sponsor logo
           function createSponsorLogo(sponsor) {
             const logoContainer = document.createElement('div');
-            logoContainer.className = 'flex items-center justify-center p-4 transition-transform duration-300 hover:scale-110';
-            
+            logoContainer.className =
+              'flex items-center justify-center p-4 transition-transform duration-300 hover:scale-110';
+
             logoContainer.innerHTML = `
               <img src="${sponsor.logo}" alt="${sponsor.name || 'Sponsor'}" class="max-w-full h-24 md:h-32 object-contain" loading="lazy" />
             `;
-            
+
             return logoContainer;
           }
-          
+
           // Render all sponsors
           const gridContainer = document.getElementById('sponsorsGrid');
-          
+
           if (data.sponsors && data.sponsors.length > 0) {
-            data.sponsors.forEach(sponsor => {
+            data.sponsors.forEach((sponsor) => {
               gridContainer.appendChild(createSponsorLogo(sponsor));
             });
           }
-          
         } catch (error) {
           console.error('Error loading sponsors:', error);
         }
@@ -1688,12 +1937,12 @@ subsequently. The prize is given every year on 22nd December.
           // Fetch accommodation data from JSON file
           const response = await fetch('assets/accommodation.json');
           const data = await response.json();
-          
+
           // Function to create accommodation card
           function createAccommodationCard(accommodation) {
             const card = document.createElement('div');
             card.className = 'accommodation-card';
-            
+
             card.innerHTML = `
               <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image" loading="lazy" />
               <div class="accommodation-overlay">
@@ -1704,108 +1953,237 @@ subsequently. The prize is given every year on 22nd December.
                 </div>
               </div>
             `;
-            
+
             return card;
           }
-          
+
           // Render all accommodations in carousel
           const carousel = document.getElementById('accommodationCarousel');
-          
+
           if (data.accommodations && data.accommodations.length > 0) {
-            data.accommodations.forEach(accommodation => {
+            data.accommodations.forEach((accommodation) => {
               carousel.appendChild(createAccommodationCard(accommodation));
             });
           }
-          
+
           // Carousel navigation functionality
           const prevBtn = document.getElementById('prevBtn');
           const nextBtn = document.getElementById('nextBtn');
           const scrollAmount = Math.max(360, Math.floor(carousel.clientWidth * 0.75));
-          
+
           prevBtn.addEventListener('click', () => {
             carousel.scrollBy({
               left: -scrollAmount,
-              behavior: 'smooth'
+              behavior: 'smooth',
             });
           });
-          
+
           nextBtn.addEventListener('click', () => {
             carousel.scrollBy({
               left: scrollAmount,
-              behavior: 'smooth'
+              behavior: 'smooth',
             });
           });
-          
         } catch (error) {
           console.error('Error loading accommodation:', error);
         }
       }
-      
+
       // Inline people data
       const peopleData = {
-        "scientificCommittee": [
-          {"name": "Henning Krause", "affiliation": "Universität Bielefeld, Bielefeld"},
-          {"name": "Bernhard Keller", "affiliation": "Université Paris Cité, Paris"},
-          {"name": "Krishnaswami Alladi", "affiliation": "University of Florida, Gainesville"},
-          {"name": "Michel Waldschmidt", "affiliation": "Sorbonne Université, Institut de Mathématiques de Jussieu (UMR 7586 du CNRS), Paris"},
-          {"name": "Ken Ono", "affiliation": "University of Virginia, Charlottesville"},
-          {"name": "Sujatha Ramdorai", "affiliation": "University of British Columbia, Vancouver"},
-          {"name": "Claudia Polini", "affiliation": "University of Notre Dame, Notre Dame"},
-          {"name": "Andrea Solotar", "affiliation": "University of Buenos Aires, Autónoma de Buenos Aires"},
-          {"name": "Ravindranathan Thangadurai", "affiliation": "Harish-Chandra Research Institute, Prayagraj"},
-          {"name": "B. Sury", "affiliation": "ISI, Bangalore"}
+        scientificCommittee: [
+          { name: 'Henning Krause', affiliation: 'Universität Bielefeld, Bielefeld' },
+          { name: 'Bernhard Keller', affiliation: 'Université Paris Cité, Paris' },
+          { name: 'Krishnaswami Alladi', affiliation: 'University of Florida, Gainesville' },
+          {
+            name: 'Michel Waldschmidt',
+            affiliation: 'Sorbonne Université, Institut de Mathématiques de Jussieu (UMR 7586 du CNRS), Paris',
+          },
+          { name: 'Ken Ono', affiliation: 'University of Virginia, Charlottesville' },
+          { name: 'Sujatha Ramdorai', affiliation: 'University of British Columbia, Vancouver' },
+          { name: 'Claudia Polini', affiliation: 'University of Notre Dame, Notre Dame' },
+          { name: 'Andrea Solotar', affiliation: 'University of Buenos Aires, Autónoma de Buenos Aires' },
+          { name: 'Ravindranathan Thangadurai', affiliation: 'Harish-Chandra Research Institute, Prayagraj' },
+          { name: 'B. Sury', affiliation: 'ISI, Bangalore' },
         ],
-        "advisoryCommittee": [
-          {"name": "Prof. R. Sethuraman", "image": "assets/patron-in-chief/1. Prof. Sethuraman.png", "title": "Chancellor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Prof. S. Vaidhyasubramaniam", "image": "assets/patron-in-chief/2. VC.png", "title": "Vice Chancellor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Prof. R. Chandramouli", "image": "assets/patron-in-chief/3. The Registrar.png", "title": "The Registrar", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Prof. S. Swaminathan", "image": "assets/patron-in-chief/4. Planning and development.png", "title": "Dean Planning and Development", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Prof. K. Umamaheswari", "image": "assets/patron-in-chief/5. Dean - Umamaheswari.jpg.jpeg", "title": "Dean SASHE", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Prof. M. Sridharan", "image": "assets/patron-in-chief/6. Associate Dean - Sridharan.jpg.jpeg", "title": "Associate Dean, SASHE", "affiliation": "SASTRA Deemed to be University, Thanjavur"}
+        advisoryCommittee: [
+          {
+            name: 'Prof. R. Sethuraman',
+            image: 'assets/patron-in-chief/1. Prof. Sethuraman.png',
+            title: 'Chancellor',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Prof. S. Vaidhyasubramaniam',
+            image: 'assets/patron-in-chief/2. VC.png',
+            title: 'Vice Chancellor',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Prof. R. Chandramouli',
+            image: 'assets/patron-in-chief/3. The Registrar.png',
+            title: 'The Registrar',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Prof. S. Swaminathan',
+            image: 'assets/patron-in-chief/4. Planning and development.png',
+            title: 'Dean Planning and Development',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Prof. K. Umamaheswari',
+            image: 'assets/patron-in-chief/5. Dean - Umamaheswari.jpg.jpeg',
+            title: 'Dean SASHE',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Prof. M. Sridharan',
+            image: 'assets/patron-in-chief/6. Associate Dean - Sridharan.jpg.jpeg',
+            title: 'Associate Dean, SASHE',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
         ],
-        "teachingExperts": [
-          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "description": "Bernhard Keller is a professor at Université Paris Cité. In his research, he applies representation theory and homological algebra to the study of cluster algebras."},
-          {"name": "Sujatha Ramdorai", "image": "assets/imgs/Sujatha Ramdorai.jpg", "description": "Currently holding a Canada Research Chair position at the University of British Columbia, Canada. Prior to this, was a Professor at Tata Institute of Fundamental research. Areas of interest include Algebraic Number Theory, Iwasawa theory of elliptic curves over noncommutative p-adic Lie extensions."},
-          {"name": "Ashish K Srivastava", "image": "assets/imgs/Ashish.JPG", "description": "Ashish K Srivastava is a Professor of Mathematics at Saint Louis University, USA. His research interests include Noncommutative Algebra, and Combinatorial Algebra. He is an author of two research monographs: one published in the London Math Society Lecture Notes series of Cambridge University Press and the other in Oxford Mathematical Monographs Series of Oxford University Press. Dr Srivastava has published more than 45 research articles, and his research has been partially funded by Simons Foundation. He has served in the American Mathematical Society committee on human rights of mathematicians and is currently serving on the editorial board of the Journal of Algebra and its Applications."},
-          {"name": "Sanoli Gun", "image": "assets/imgs/Sanoli Gun-Photo.jpg", "description": "Sanoli Gun is a Professor of Mathematics at the Institute of Mathematical Sciences. She works in Number Theory and in particular, modular forms, special values of L-functions, transcendence and analytic theory of algebraic numbers."},
-          {"name": "Srikanth B. Iyengar", "image": "assets/imgs/photoNormal.jpeg.jpg", "description": "Srikanth Iyengar grew up in Hyderabad, India, and was granted a Bachelor of Technology in Computer Science, by the Indian Institute of Technology at Madras. He went on to study Mathematics, and earned an M.S. (1994) and a Ph. D. (1998) from Purdue University, West Lafayette. After various post-doctoral positions, and a long stint as a faculty member at the University of Nebraska-Lincoln, he joined the Department of Mathematics at the University of Utah in 2014. Srikanth's main research interest is commutative algebra, but he often borrows techniques from algebraic topology and representation theory. He has also returned that favor by applying ideas from commutative algebra to solve problems arising in the modular representation theory of finite groups, and, more recently, in algebraic number theory."},
-          {"name": "Karin Baur", "image": "assets/imgs/KM_Baur Karin.jpg", "description": "Originally from Switzerland, Karin Baur is a professor at the Ruhr University Bochum. My research lies in algebraic, geometric and combinatorial methods in representation theory. Current research interests are in cluster algebras and cluster categories, in frieze patterns, surface combinatorics."},
-          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "description": "Umamaheswaran Arunachalam is an Assistant Professor of Mathematics at SASTRA Deemed University, Thanjavur. His research interests include study of Rings and categories of Modules, Homological Algebra, Cluster Algebras, Lie algebras, Representation theory of finite dimensional algebras."}
+        teachingExperts: [
+          {
+            name: 'Bernhard Keller',
+            image: 'assets/imgs/Keller-2020.jpeg',
+            description:
+              'Bernhard Keller is a professor at Université Paris Cité. In his research, he applies representation theory and homological algebra to the study of cluster algebras.',
+          },
+          {
+            name: 'Sujatha Ramdorai',
+            image: 'assets/imgs/Sujatha Ramdorai.jpg',
+            description:
+              'Currently holding a Canada Research Chair position at the University of British Columbia, Canada. Prior to this, was a Professor at Tata Institute of Fundamental research. Areas of interest include Algebraic Number Theory, Iwasawa theory of elliptic curves over noncommutative p-adic Lie extensions.',
+          },
+          {
+            name: 'Ashish K Srivastava',
+            image: 'assets/imgs/Ashish.JPG',
+            description:
+              'Ashish K Srivastava is a Professor of Mathematics at Saint Louis University, USA. His research interests include Noncommutative Algebra, and Combinatorial Algebra. He is an author of two research monographs: one published in the London Math Society Lecture Notes series of Cambridge University Press and the other in Oxford Mathematical Monographs Series of Oxford University Press. Dr Srivastava has published more than 45 research articles, and his research has been partially funded by Simons Foundation. He has served in the American Mathematical Society committee on human rights of mathematicians and is currently serving on the editorial board of the Journal of Algebra and its Applications.',
+          },
+          {
+            name: 'Sanoli Gun',
+            image: 'assets/imgs/Sanoli Gun-Photo.jpg',
+            description:
+              'Sanoli Gun is a Professor of Mathematics at the Institute of Mathematical Sciences. She works in Number Theory and in particular, modular forms, special values of L-functions, transcendence and analytic theory of algebraic numbers.',
+          },
+          {
+            name: 'Srikanth B. Iyengar',
+            image: 'assets/imgs/photoNormal.jpeg.jpg',
+            description:
+              "Srikanth Iyengar grew up in Hyderabad, India, and was granted a Bachelor of Technology in Computer Science, by the Indian Institute of Technology at Madras. He went on to study Mathematics, and earned an M.S. (1994) and a Ph. D. (1998) from Purdue University, West Lafayette. After various post-doctoral positions, and a long stint as a faculty member at the University of Nebraska-Lincoln, he joined the Department of Mathematics at the University of Utah in 2014. Srikanth's main research interest is commutative algebra, but he often borrows techniques from algebraic topology and representation theory. He has also returned that favor by applying ideas from commutative algebra to solve problems arising in the modular representation theory of finite groups, and, more recently, in algebraic number theory.",
+          },
+          {
+            name: 'Karin Baur',
+            image: 'assets/imgs/KM_Baur Karin.jpg',
+            description:
+              'Originally from Switzerland, Karin Baur is a professor at the Ruhr University Bochum. My research lies in algebraic, geometric and combinatorial methods in representation theory. Current research interests are in cluster algebras and cluster categories, in frieze patterns, surface combinatorics.',
+          },
+          {
+            name: 'Umamaheswaran Arunachalam',
+            image: 'assets/imgs/Sastra profile image.jpg',
+            description:
+              'Umamaheswaran Arunachalam is an Assistant Professor of Mathematics at SASTRA Deemed University, Thanjavur. His research interests include study of Rings and categories of Modules, Homological Algebra, Cluster Algebras, Lie algebras, Representation theory of finite dimensional algebras.',
+          },
         ],
-        "coordinators": [
-          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "title": "Professor - Université Paris Cité, Paris"},
-          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "title": "Assistant Professor - SASTRA Deemed to be University, Thanjavur"}
+        coordinators: [
+          {
+            name: 'Bernhard Keller',
+            image: 'assets/imgs/Keller-2020.jpeg',
+            title: 'Professor - Université Paris Cité, Paris',
+          },
+          {
+            name: 'Umamaheswaran Arunachalam',
+            image: 'assets/imgs/Sastra profile image.jpg',
+            title: 'Assistant Professor - SASTRA Deemed to be University, Thanjavur',
+          },
         ],
-        "scientificOfficer": {
-          "name": "Olivier Ramaré", "image": "assets/imgs/OR2017-Triglav.png", "title": "Scientific Officer", "affiliation": "Aix-Marseille Université, Marseille, France"
+        scientificOfficer: {
+          name: 'Olivier Ramaré',
+          image: 'assets/imgs/OR2017-Triglav.png',
+          title: 'Scientific Officer',
+          affiliation: 'Aix-Marseille Université, Marseille, France',
         },
-        "localOrganisers": [
-          {"name": "Srikanth Raghavendran", "image": "assets/imgs/Srikanth Photo.jpeg", "title": "Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Punitha Batra", "image": "assets/imgs/Punitha Batra.png", "title": "Professor H", "affiliation": "Harish-Chandra Research Institute, Prayagraj"},
-          {"name": "Umamaheswaran Arunachalam", "image": "assets/imgs/Sastra profile image.jpg", "title": "Assistant Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"},
-          {"name": "Dhanasekaran Ponnialagan", "image": "assets/imgs/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png", "title": "Assistant Professor", "affiliation": "SASTRA Deemed to be University, Thanjavur"}
+        localOrganisers: [
+          {
+            name: 'Srikanth Raghavendran',
+            image: 'assets/imgs/Srikanth Photo.jpeg',
+            title: 'Professor',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Punitha Batra',
+            image: 'assets/imgs/Punitha Batra.png',
+            title: 'Professor H',
+            affiliation: 'Harish-Chandra Research Institute, Prayagraj',
+          },
+          {
+            name: 'Umamaheswaran Arunachalam',
+            image: 'assets/imgs/Sastra profile image.jpg',
+            title: 'Assistant Professor',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
+          {
+            name: 'Dhanasekaran Ponnialagan',
+            image: 'assets/imgs/ChatGPT Image Jun 19, 2025, 03_36_44 PM.png',
+            title: 'Assistant Professor',
+            affiliation: 'SASTRA Deemed to be University, Thanjavur',
+          },
         ],
-        "internationalOrganisers": [
-          {"name": "Bernhard Keller", "image": "assets/imgs/Keller-2020.jpeg", "title": "Professor", "affiliation": "Université Paris Cité, Paris"},
-          {"name": "Ashish K Srivastava", "image": "assets/imgs/Ashish.JPG", "title": "Professor", "affiliation": "Saint Louis University, Saint Louis"},
-          {"name": "Sujatha Ramdorai", "image": "assets/imgs/Sujatha Ramdorai.jpg", "title": "Professor", "affiliation": "University of British Columbia, Canada"},
-          {"name": "Srikanth B. Iyengar", "image": "assets/imgs/photoNormal.jpeg.jpg", "title": "Professor", "affiliation": "University of Utah, Utah"},
-          {"name": "Karin Baur", "image": "assets/imgs/KM_Baur Karin.jpg", "title": "Professor", "affiliation": "Ruhr University Bochum, Bochum"},
-          {"name": "Sanoli Gun", "image": "assets/imgs/Sanoli Gun-Photo.jpg", "title": "Professor", "affiliation": "Institute of Mathematical Sciences (IMSc), Chennai"}
-        ]
+        internationalOrganisers: [
+          {
+            name: 'Bernhard Keller',
+            image: 'assets/imgs/Keller-2020.jpeg',
+            title: 'Professor',
+            affiliation: 'Université Paris Cité, Paris',
+          },
+          {
+            name: 'Ashish K Srivastava',
+            image: 'assets/imgs/Ashish.JPG',
+            title: 'Professor',
+            affiliation: 'Saint Louis University, Saint Louis',
+          },
+          {
+            name: 'Sujatha Ramdorai',
+            image: 'assets/imgs/Sujatha Ramdorai.jpg',
+            title: 'Professor',
+            affiliation: 'University of British Columbia, Canada',
+          },
+          {
+            name: 'Srikanth B. Iyengar',
+            image: 'assets/imgs/photoNormal.jpeg.jpg',
+            title: 'Professor',
+            affiliation: 'University of Utah, Utah',
+          },
+          {
+            name: 'Karin Baur',
+            image: 'assets/imgs/KM_Baur Karin.jpg',
+            title: 'Professor',
+            affiliation: 'Ruhr University Bochum, Bochum',
+          },
+          {
+            name: 'Sanoli Gun',
+            image: 'assets/imgs/Sanoli Gun-Photo.jpg',
+            title: 'Professor',
+            affiliation: 'Institute of Mathematical Sciences (IMSc), Chennai',
+          },
+        ],
       };
 
       // Load and render people data (teaching experts, coordinators, organisers)
       async function loadPeople() {
         try {
           const data = peopleData;
-          
+
           // Render Teaching Experts
           const teachingExpertsContainer = document.getElementById('teachingExpertsContainer');
           if (data.teachingExperts && teachingExpertsContainer) {
-            data.teachingExperts.forEach(expert => {
+            data.teachingExperts.forEach((expert) => {
               const expertCard = document.createElement('div');
-              expertCard.className = 'flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8';
+              expertCard.className =
+                'flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-50 to-blue-100 border-l-8 border-blue-400 rounded-xl shadow-md p-6 md:p-8 gap-8';
               expertCard.innerHTML = `
                 <img
                   src="${expert.image}"
@@ -1822,11 +2200,11 @@ subsequently. The prize is given every year on 22nd December.
               teachingExpertsContainer.appendChild(expertCard);
             });
           }
-          
+
           // Render Coordinators
           const coordinatorsContainer = document.getElementById('coordinatorsContainer');
           if (data.coordinators && coordinatorsContainer) {
-            data.coordinators.forEach(coordinator => {
+            data.coordinators.forEach((coordinator) => {
               const coordCard = document.createElement('div');
               coordCard.className = 'card';
               coordCard.innerHTML = `
@@ -1844,7 +2222,7 @@ subsequently. The prize is given every year on 22nd December.
               coordinatorsContainer.appendChild(coordCard);
             });
           }
-          
+
           // Render Scientific Officer
           const scientificOfficerContainer = document.getElementById('scientificOfficerContainer');
           if (data.scientificOfficer && scientificOfficerContainer) {
@@ -1864,11 +2242,11 @@ subsequently. The prize is given every year on 22nd December.
               </div>
             `;
           }
-          
+
           // Render Local Organisers
           const localOrganisersContainer = document.getElementById('localOrganisersContainer');
           if (data.localOrganisers && localOrganisersContainer) {
-            data.localOrganisers.forEach(organiser => {
+            data.localOrganisers.forEach((organiser) => {
               const organiserCard = document.createElement('div');
               organiserCard.className = 'card';
               organiserCard.innerHTML = `
@@ -1886,11 +2264,11 @@ subsequently. The prize is given every year on 22nd December.
               localOrganisersContainer.appendChild(organiserCard);
             });
           }
-          
+
           // Render International Organisers
           const internationalOrganisersContainer = document.getElementById('internationalOrganisersContainer');
           if (data.internationalOrganisers && internationalOrganisersContainer) {
-            data.internationalOrganisers.forEach(organiser => {
+            data.internationalOrganisers.forEach((organiser) => {
               const organiserCard = document.createElement('div');
               organiserCard.className = 'card';
               organiserCard.innerHTML = `
@@ -1912,7 +2290,7 @@ subsequently. The prize is given every year on 22nd December.
           // Render Advisory Committee
           const advisoryCommitteeContainer = document.getElementById('advisoryCommitteeContainer');
           if (data.advisoryCommittee && advisoryCommitteeContainer) {
-            data.advisoryCommittee.forEach(member => {
+            data.advisoryCommittee.forEach((member) => {
               const memberCard = document.createElement('div');
               memberCard.className = 'card';
               memberCard.innerHTML = `
@@ -1934,9 +2312,10 @@ subsequently. The prize is given every year on 22nd December.
           // Render Scientific Committee
           const scientificCommitteeContainer = document.getElementById('scientificCommitteeContainer');
           if (data.scientificCommittee && scientificCommitteeContainer) {
-            data.scientificCommittee.forEach(member => {
+            data.scientificCommittee.forEach((member) => {
               const memberCard = document.createElement('div');
-              memberCard.className = 'bg-white border-l-4 border-blue-500 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:border-blue-600 hover:translate-x-1';
+              memberCard.className =
+                'bg-white border-l-4 border-blue-500 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:border-blue-600 hover:translate-x-1';
               memberCard.innerHTML = `
                 <div>
                   <h3 class="text-lg font-bold text-blue-800 mb-2 leading-tight">${member.name}</h3>
@@ -1946,12 +2325,11 @@ subsequently. The prize is given every year on 22nd December.
               scientificCommitteeContainer.appendChild(memberCard);
             });
           }
-          
         } catch (error) {
           console.error('Error loading people data:', error);
         }
       }
-      
+
       // Load all data when DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
@@ -2009,19 +2387,35 @@ subsequently. The prize is given every year on 22nd December.
           <div class="space-y-4">
             <h4 class="text-xl font-bold text-white mb-4">Quick Links</h4>
             <ul class="space-y-3">
-              <li><a href="#home" class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center">
-                <span class="mr-2">›</span> Home
-              </a></li>
-              <li><a href="#about" class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center">
-                <span class="mr-2">›</span> About
-              </a></li>
               <li>
-                <a href="timetable.html" class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center">
+                <a
+                  href="#home"
+                  class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center"
+                >
+                  <span class="mr-2">›</span> Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center"
+                >
+                  <span class="mr-2">›</span> About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="timetable.html"
+                  class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center"
+                >
                   <span class="mr-2">›</span> Schedule
                 </a>
               </li>
               <li>
-                <a href="#courses" class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center">
+                <a
+                  href="#courses"
+                  class="footer-text hover:text-white transition-colors duration-300 inline-flex items-center"
+                >
                   <span class="mr-2">›</span> Courses
                 </a>
               </li>
@@ -2051,7 +2445,7 @@ subsequently. The prize is given every year on 22nd December.
                 </div>
               </div>
             </div>
-            
+
             <!-- Coordinators -->
             <div class="mt-6 pt-4 border-t border-blue-300">
               <p class="footer-text font-bold text-white mb-3">Coordinators</p>
@@ -2146,6 +2540,52 @@ subsequently. The prize is given every year on 22nd December.
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
             closeMobileMenu();
+          }
+        });
+
+        // Dropdown menu functionality
+        const dropdownWrappers = document.querySelectorAll('.dropdown-wrapper');
+        dropdownWrappers.forEach((wrapper) => {
+          const toggle = wrapper.querySelector('.dropdown-toggle');
+          const menu = wrapper.querySelector('.dropdown-menu');
+
+          if (toggle && menu) {
+            toggle.addEventListener('click', function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Close other dropdowns
+              dropdownWrappers.forEach((otherWrapper) => {
+                if (otherWrapper !== wrapper) {
+                  otherWrapper.classList.remove('active');
+                }
+              });
+
+              // Toggle current dropdown
+              wrapper.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+              if (!wrapper.contains(e.target)) {
+                wrapper.classList.remove('active');
+              }
+            });
+
+            // Close dropdown on escape key
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape' && wrapper.classList.contains('active')) {
+                wrapper.classList.remove('active');
+              }
+            });
+
+            // Close dropdown when a menu link is clicked
+            const links = menu.querySelectorAll('a');
+            links.forEach((link) => {
+              link.addEventListener('click', function () {
+                wrapper.classList.remove('active');
+              });
+            });
           }
         });
 
