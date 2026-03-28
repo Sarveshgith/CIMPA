@@ -1852,6 +1852,11 @@
               <!-- Accommodations will be loaded dynamically -->
             </div>
 
+            <div id="mobileScrollHint" class="mobile-scroll-hint" role="note" aria-live="polite">
+              <span>Swipe left or right to see more hotels</span>
+              <span class="mobile-scroll-hint-arrow" aria-hidden="true"></span>
+            </div>
+
             <!-- Navigation Buttons -->
             <button
               id="prevBtn"
@@ -1896,14 +1901,106 @@
     </section>
 
     <script>
+      // Inline sponsors data to avoid external JSON fetch issues on static deployments.
+      const sponsorsData = {
+        sponsors: [
+          {
+            logo: 'assets/sponsors/cimpa-carre.png',
+            name: 'Academic Partner',
+          },
+          {
+            logo: 'assets/sponsors/cnrs.jpg.jpeg',
+            name: 'Technology Corp',
+          },
+          {
+            logo: 'assets/sponsors/I2M.png',
+            name: 'Innovation Foundation',
+          },
+          {
+            logo: 'assets/sponsors/BMBF Logo.png',
+            name: 'Innovation Foundation',
+          },
+          {
+            logo: 'assets/sponsors/CMI Logo.png',
+            name: 'Innovation Foundation',
+          },
+          {
+            logo: 'assets/sponsors/compositio_mathematica.jpg.jpeg',
+            name: 'Innovation Foundation',
+          },
+          {
+            logo: 'assets/sponsors/SASTRA Logo.png',
+            name: 'Research Institute',
+          },
+          {
+            logo: 'assets/sponsors/IMU.png',
+            name: 'Random shit',
+          },
+          {
+            logo: 'assets/sponsors/WhatsApp Image 2026-03-27 at 22.02.41.jpeg',
+            name: 'Random shit 2',
+          },
+        ],
+      };
+
+      // Inline accommodation data to avoid external JSON fetch issues on static deployments.
+      const accommodationData = {
+        accommodations: [
+          {
+            name: 'SASTRA University Guesthouse',
+            image: 'assets/accomodation/SASTRA University Guesthouse.png',
+            isSastraArranged: true,
+            description:
+              'Comfortably located diagonally opposite the main campus, SASTRA Guest House offers 28 beautifully renovated rooms (22 AC and 6 non-AC). Each room is equipped with modern furniture, work amenities, Smart TVs, and high-speed Wi-Fi. Guests can enjoy cozy beds, 24/7 hot & cold water, ample parking, and an attached dining hall serving quality meals.',
+            amenities: 'WiFi, AC/Non-AC Rooms, Smart TV, Dining Hall, 24/7 Water, Parking, Security',
+          },
+          {
+            name: 'Grace Vista',
+            image: 'assets/accomodation/Grace Vista - Image 2.png',
+            isSastraArranged: true,
+            description:
+              "Located 16 km from SASTRA University, Grace Vista blends modern luxury with Thanjavur's cultural charm. This premium 3-star boutique-style hotel offers thoughtfully designed rooms with modern furniture, Smart TVs, work amenities, and high-speed Wi-Fi for a comfortable and elegant stay.",
+            amenities: 'WiFi, Smart TV, Premium Rooms, Work Amenities, Boutique Experience',
+          },
+          {
+            name: 'Hotel Parisutham',
+            image: 'assets/accomodation/Hotel Parisutham.png',
+            isSastraArranged: false,
+            description:
+              'Located 15.5 km from SASTRA University near the Old Bus Stand and Brihadeeswarar Temple, Hotel Parisutham offers luxuriously appointed rooms designed for comfort and tranquility. Guests can enjoy modern amenities, excellent service, and a peaceful atmosphere in a prime location.',
+            amenities: 'WiFi, AC, Smart TV, Multi-cuisine Dining, Conference Facilities',
+          },
+          {
+            name: 'Tanjore Sangam',
+            image: 'assets/accomodation/Tanjore_Sangam.png',
+            isSastraArranged: false,
+            description:
+              "Situated 15 km from SASTRA University near the Old Bus Stand and Big Temple, Sangam Hotel offers a blend of cultural experience and modern comfort. With dining options like 'Thillana' restaurant and 'Layam' bar, the hotel provides an ideal stay for exploring Thanjavur\'s heritage, including temples and famous paintings.",
+            amenities: 'WiFi, Multi-cuisine Restaurant, Bar, Cultural Access, Parking',
+          },
+          {
+            name: 'Hotel Gnanam',
+            image: 'assets/accomodation/Hotel Ganam - Thanjavur.jpeg',
+            isSastraArranged: false,
+            description:
+              'Located 15 km from SASTRA University in Attar Mohalla, Hotel Gnanam offers a comfortable stay near Brihadeeswarar Temple and Royal Palace. Rooms feature air conditioning, private balconies/terraces, Wi-Fi, and modern amenities. Guests can enjoy vegetarian cuisine, room service, and a culturally rich neighborhood experience.',
+            amenities: 'WiFi, AC Rooms, Balcony/Terrace, Restaurant, Room Service',
+          },
+          {
+            name: 'Grand Ashok',
+            image: 'assets/accomodation/Grant Ashok- Thanjavur.png',
+            isSastraArranged: false,
+            description:
+              'Part of Bergamont Hotels, Grand Ashok provides a comfortable and convenient stay near major pilgrimage sites. The hotel features modern rooms with Smart TVs, work amenities, and high-speed Wi-Fi. Guests also benefit from both vegetarian and non-vegetarian dining options within the same building.',
+            amenities: 'WiFi, Smart TV, Restaurant (Veg & Non-Veg), Room Service, Parking',
+          },
+        ],
+      };
+
       // Load and render sponsors dynamically
       async function loadSponsors() {
         try {
-          const response = await fetch('assets/sponsors.json');
-          if (!response.ok) {
-            throw new Error(`Failed to load sponsors.json: ${response.status}`);
-          }
-          const data = await response.json();
+          const data = sponsorsData;
 
           // Function to create sponsor logo
           function createSponsorLogo(sponsor) {
@@ -1934,20 +2031,21 @@
       // Load and render accommodation carousel
       async function loadAccommodation() {
         try {
-          // Fetch accommodation data from JSON file
-          const response = await fetch('assets/accommodation.json');
-          const data = await response.json();
+          const data = accommodationData;
 
           // Function to create accommodation card
           function createAccommodationCard(accommodation) {
             const card = document.createElement('div');
             card.className = 'accommodation-card';
+            const arrangementMarker = accommodation.isSastraArranged
+              ? '<span class="accommodation-status-badge">SASTRA-arranged</span>'
+              : '';
 
             card.innerHTML = `
               <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image" loading="lazy" />
               <div class="accommodation-overlay">
                 <div class="accommodation-overlay-content">
-                  <h3 class="accommodation-title">${accommodation.name}</h3>
+                  <h3 class="accommodation-title">${accommodation.name} ${arrangementMarker}</h3>
                   <p class="accommodation-description">${accommodation.description}</p>
                   <p class="accommodation-amenities"><strong>Amenities:</strong> ${accommodation.amenities}</p>
                 </div>
@@ -1970,6 +2068,7 @@
           const prevBtn = document.getElementById('prevBtn');
           const nextBtn = document.getElementById('nextBtn');
           const scrollAmount = Math.max(360, Math.floor(carousel.clientWidth * 0.75));
+          const mobileScrollHint = document.getElementById('mobileScrollHint');
 
           prevBtn.addEventListener('click', () => {
             carousel.scrollBy({
@@ -1984,6 +2083,29 @@
               behavior: 'smooth',
             });
           });
+
+          if (mobileScrollHint && window.matchMedia('(max-width: 768px)').matches) {
+            const hideScrollHint = () => {
+              mobileScrollHint.classList.add('is-hidden');
+            };
+
+            if (carousel.scrollWidth <= carousel.clientWidth + 4) {
+              hideScrollHint();
+            } else {
+              carousel.addEventListener(
+                'scroll',
+                () => {
+                  if (carousel.scrollLeft > 12) {
+                    hideScrollHint();
+                  }
+                },
+                { passive: true }
+              );
+
+              carousel.addEventListener('touchstart', hideScrollHint, { once: true, passive: true });
+              setTimeout(hideScrollHint, 6000);
+            }
+          }
         } catch (error) {
           console.error('Error loading accommodation:', error);
         }
