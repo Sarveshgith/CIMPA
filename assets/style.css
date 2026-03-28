@@ -323,7 +323,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .accommodation-carousel-wrapper {
-    padding: 0 2rem;
+    padding: 0;
   }
 
   .accommodation-card {
@@ -334,15 +334,13 @@
 
   #prevBtn,
   #nextBtn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .accommodation-carousel-wrapper {
-    padding: 0 1.5rem;
+    padding: 0;
   }
 
   .accommodation-card {
