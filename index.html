@@ -1969,6 +1969,7 @@
             description:
               'Located 15.5 km from SASTRA University near the Old Bus Stand and Brihadeeswarar Temple, Hotel Parisutham offers luxuriously appointed rooms designed for comfort and tranquility. Guests can enjoy modern amenities, excellent service, and a peaceful atmosphere in a prime location.',
             amenities: 'WiFi, AC, Smart TV, Multi-cuisine Dining, Conference Facilities',
+            website: 'https://www.hotelparisutham.com/photolibrary.htm',
           },
           {
             name: 'Tanjore Sangam',
@@ -1977,6 +1978,7 @@
             description:
               "Situated 15 km from SASTRA University near the Old Bus Stand and Big Temple, Sangam Hotel offers a blend of cultural experience and modern comfort. With dining options like 'Thillana' restaurant and 'Layam' bar, the hotel provides an ideal stay for exploring Thanjavur\'s heritage, including temples and famous paintings.",
             amenities: 'WiFi, Multi-cuisine Restaurant, Bar, Cultural Access, Parking',
+            website: 'https://www.sangamhotels.com/thanjavur/',
           },
           {
             name: 'Hotel Gnanam',
@@ -1985,6 +1987,7 @@
             description:
               'Located 15 km from SASTRA University in Attar Mohalla, Hotel Gnanam offers a comfortable stay near Brihadeeswarar Temple and Royal Palace. Rooms feature air conditioning, private balconies/terraces, Wi-Fi, and modern amenities. Guests can enjoy vegetarian cuisine, room service, and a culturally rich neighborhood experience.',
             amenities: 'WiFi, AC Rooms, Balcony/Terrace, Restaurant, Room Service',
+            website: 'https://hotelgnanam.com/',
           },
           {
             name: 'Grand Ashok',
@@ -1993,6 +1996,7 @@
             description:
               'Part of Bergamont Hotels, Grand Ashok provides a comfortable and convenient stay near major pilgrimage sites. The hotel features modern rooms with Smart TVs, work amenities, and high-speed Wi-Fi. Guests also benefit from both vegetarian and non-vegetarian dining options within the same building.',
             amenities: 'WiFi, Smart TV, Restaurant (Veg & Non-Veg), Room Service, Parking',
+            website: 'https://www.bergamonthotels.com/grand-ashok-thanjavur/',
           },
         ],
       };
@@ -2037,8 +2041,19 @@
           function createAccommodationCard(accommodation) {
             const card = document.createElement('div');
             card.className = 'accommodation-card';
-            const arrangementMarker = accommodation.isSastraArranged
-              ? '<span class="accommodation-status-badge">SASTRA-arranged</span>'
+            const arrangementMarker =
+              accommodation.isSastraArranged ? '<span class="accommodation-status-badge">SASTRA-arranged</span>' : '';
+
+            const websiteLink =
+              accommodation.website ?
+                `<a href="${accommodation.website}" target="_blank" rel="noopener noreferrer" class="accommodation-website-link">
+                   <svg class="accommodation-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                     <polyline points="15 3 21 3 21 9"></polyline>
+                     <line x1="10" y1="14" x2="21" y2="3"></line>
+                   </svg>
+                   Visit Website
+                 </a>`
               : '';
 
             card.innerHTML = `
@@ -2050,6 +2065,7 @@
                   <p class="accommodation-amenities"><strong>Amenities:</strong> ${accommodation.amenities}</p>
                 </div>
               </div>
+              ${websiteLink}
             `;
 
             return card;
@@ -2099,7 +2115,7 @@
                     hideScrollHint();
                   }
                 },
-                { passive: true }
+                { passive: true },
               );
 
               carousel.addEventListener('touchstart', hideScrollHint, { once: true, passive: true });
