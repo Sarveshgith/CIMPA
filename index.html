@@ -1015,6 +1015,14 @@
             </a>
           </li>
           <li>
+            <a href="#canteen" onclick="closeMobileMenu()" class="mobile-nav-item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              <span>Canteens</span>
+            </a>
+          </li>
+          <li>
             <a href="#registration" onclick="closeMobileMenu()" class="mobile-nav-item">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -1226,6 +1234,17 @@
                     ></path>
                   </svg>
                   <span>Accommodation</span>
+                </a>
+                <a href="#canteen">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    ></path>
+                  </svg>
+                  <span>Canteens & Cafés</span>
                 </a>
                 <a href="timetable.html">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1882,6 +1901,24 @@
       </div>
     </section>
 
+    <!-- Canteen Section -->
+    <section id="canteen" class="section bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">Campus Canteens & Cafés</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg max-w-3xl mx-auto">
+          Discover popular dining spots on SASTRA campus where you can relax, socialize, and enjoy delicious meals
+        </p>
+
+        <!-- Canteen Grid -->
+        <div
+          id="canteenGrid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start gap-6 max-w-6xl mx-auto"
+        >
+          <!-- Canteens will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
     <!-- Sponsors Section -->
     <section id="sponsors" class="section bg-white py-20">
       <div class="container mx-auto px-4">
@@ -1952,7 +1989,6 @@
             isSastraArranged: true,
             description:
               'Comfortably located diagonally opposite the main campus, SASTRA Guest House offers 28 beautifully renovated rooms (22 AC and 6 non-AC). Each room is equipped with modern furniture, work amenities, Smart TVs, and high-speed Wi-Fi. Guests can enjoy cozy beds, 24/7 hot & cold water, ample parking, and an attached dining hall serving quality meals.',
-            amenities: 'WiFi, AC/Non-AC Rooms, Smart TV, Dining Hall, 24/7 Water, Parking, Security',
           },
           {
             name: 'Grace Vista',
@@ -1960,7 +1996,6 @@
             isSastraArranged: true,
             description:
               "Located 16 km from SASTRA University, Grace Vista blends modern luxury with Thanjavur's cultural charm. This premium 3-star boutique-style hotel offers thoughtfully designed rooms with modern furniture, Smart TVs, work amenities, and high-speed Wi-Fi for a comfortable and elegant stay.",
-            amenities: 'WiFi, Smart TV, Premium Rooms, Work Amenities, Boutique Experience',
           },
           {
             name: 'Hotel Parisutham',
@@ -1968,7 +2003,6 @@
             isSastraArranged: false,
             description:
               'Located 15.5 km from SASTRA University near the Old Bus Stand and Brihadeeswarar Temple, Hotel Parisutham offers luxuriously appointed rooms designed for comfort and tranquility. Guests can enjoy modern amenities, excellent service, and a peaceful atmosphere in a prime location.',
-            amenities: 'WiFi, AC, Smart TV, Multi-cuisine Dining, Conference Facilities',
             website: 'https://www.hotelparisutham.com/photolibrary.htm',
           },
           {
@@ -1977,7 +2011,6 @@
             isSastraArranged: false,
             description:
               "Situated 15 km from SASTRA University near the Old Bus Stand and Big Temple, Sangam Hotel offers a blend of cultural experience and modern comfort. With dining options like 'Thillana' restaurant and 'Layam' bar, the hotel provides an ideal stay for exploring Thanjavur\'s heritage, including temples and famous paintings.",
-            amenities: 'WiFi, Multi-cuisine Restaurant, Bar, Cultural Access, Parking',
             website: 'https://www.sangamhotels.com/thanjavur/',
           },
           {
@@ -1986,7 +2019,6 @@
             isSastraArranged: false,
             description:
               'Located 15 km from SASTRA University in Attar Mohalla, Hotel Gnanam offers a comfortable stay near Brihadeeswarar Temple and Royal Palace. Rooms feature air conditioning, private balconies/terraces, Wi-Fi, and modern amenities. Guests can enjoy vegetarian cuisine, room service, and a culturally rich neighborhood experience.',
-            amenities: 'WiFi, AC Rooms, Balcony/Terrace, Restaurant, Room Service',
             website: 'https://hotelgnanam.com/',
           },
           {
@@ -1995,8 +2027,53 @@
             isSastraArranged: false,
             description:
               'Part of Bergamont Hotels, Grand Ashok provides a comfortable and convenient stay near major pilgrimage sites. The hotel features modern rooms with Smart TVs, work amenities, and high-speed Wi-Fi. Guests also benefit from both vegetarian and non-vegetarian dining options within the same building.',
-            amenities: 'WiFi, Smart TV, Restaurant (Veg & Non-Veg), Room Service, Parking',
             website: 'https://www.bergamonthotels.com/grand-ashok-thanjavur/',
+          },
+        ],
+      };
+
+      // Inline canteen data
+      const canteenData = {
+        canteens: [
+          {
+            name: 'Krishna Canteen',
+            image: 'assets/canteens/Krishna Canteen (KC)-2.JPG.jpeg',
+            type: 'Full Meals',
+            typeColor: 'from-red-500 to-orange-500',
+            description:
+              'One of the most popular food spots on campus, well-known for its taste, affordability, and quick service. Often busier due to its excellent reputation.',
+            highlights: ['Taste', 'Affordability', 'Quick Service'],
+            icon: '🍽️',
+          },
+          {
+            name: 'Shanmugha Canteen',
+            image: 'assets/canteens/Shanmugha Bhavan -  Canteen-1.JPG.jpeg',
+            type: 'Spacious Dining',
+            typeColor: 'from-yellow-500 to-orange-500',
+            description:
+              'A well-known food spot that is spacious and relaxed, making it perfect for both eating and spending quality time with friends.',
+            highlights: ['Spacious', 'Relaxed Vibe', 'Social'],
+            icon: '👥',
+          },
+          {
+            name: 'Vela Cafe',
+            image: 'assets/canteens/Vela Cafe.JPG.jpeg',
+            type: 'Beverages & Snacks',
+            typeColor: 'from-blue-500 to-cyan-500',
+            description:
+              'A popular beverage and snack spot known for refreshing drinks, light bites, and a relaxed atmosphere. Perfect for a quick break between classes.',
+            highlights: ['Coffee', 'Light Snacks', 'Chill Space'],
+            icon: '☕',
+          },
+          {
+            name: 'ICE Cream Bar',
+            image: 'assets/canteens/Ice Cream Bar.JPG.jpeg',
+            type: 'Desserts',
+            typeColor: 'from-pink-500 to-purple-500',
+            description:
+              'A favorite hangout spot, especially on hot days. Known for delicious ice creams, desserts, and quick sweet treats that provide a refreshing break.',
+            highlights: ['Ice Cream', 'Desserts', 'Sweet Treats'],
+            icon: '🍦',
           },
         ],
       };
@@ -2062,7 +2139,6 @@
                 <div class="accommodation-overlay-content">
                   <h3 class="accommodation-title">${accommodation.name} ${arrangementMarker}</h3>
                   <p class="accommodation-description">${accommodation.description}</p>
-                  <p class="accommodation-amenities"><strong>Amenities:</strong> ${accommodation.amenities}</p>
                 </div>
               </div>
               ${websiteLink}
@@ -2124,6 +2200,53 @@
           }
         } catch (error) {
           console.error('Error loading accommodation:', error);
+        }
+      }
+
+      // Load and render canteen grid
+      async function loadCanteen() {
+        try {
+          const data = canteenData;
+
+          // Function to create canteen card
+          function createCanteenCard(canteen) {
+            const card = document.createElement('div');
+            card.className = 'canteen-card group';
+
+            const highlightsHTML = canteen.highlights
+              .map((highlight) => `<span class="canteen-highlight">${highlight}</span>`)
+              .join('');
+
+            card.innerHTML = `
+              <div class="canteen-card-image">
+                <img src="${canteen.image}" alt="${canteen.name}" class="w-full h-full object-cover" loading="lazy" />
+                <div class="canteen-type-badge bg-gradient-to-r ${canteen.typeColor}">
+                  <span class="canteen-type-emoji">${canteen.icon}</span>
+                  <span>${canteen.type}</span>
+                </div>
+              </div>
+              <div class="canteen-card-content">
+                <h3 class="canteen-title">${canteen.name}</h3>
+                 <p class="canteen-description">${canteen.description}</p>
+                <div class="canteen-highlights">
+                  ${highlightsHTML}
+                </div>
+              </div>
+            `;
+
+            return card;
+          }
+
+          // Render all canteens in grid
+          const grid = document.getElementById('canteenGrid');
+
+          if (data.canteens && data.canteens.length > 0) {
+            data.canteens.forEach((canteen) => {
+              grid.appendChild(createCanteenCard(canteen));
+            });
+          }
+        } catch (error) {
+          console.error('Error loading canteen:', error);
         }
       }
 
@@ -2472,11 +2595,13 @@
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           loadAccommodation();
+          loadCanteen();
           loadSponsors();
           loadPeople();
         });
       } else {
         loadAccommodation();
+        loadCanteen();
         loadSponsors();
         loadPeople();
       }
