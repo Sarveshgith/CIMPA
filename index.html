@@ -1015,6 +1015,19 @@
             </a>
           </li>
           <li>
+            <a href="#how-to-reach" onclick="closeMobileMenu()" class="mobile-nav-item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2m0 18l6-3m-6 3V2m6 15l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 2"
+                />
+              </svg>
+              <span>How to reach us</span>
+            </a>
+          </li>
+          <li>
             <a href="#canteen" onclick="closeMobileMenu()" class="mobile-nav-item">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -1234,6 +1247,17 @@
                     ></path>
                   </svg>
                   <span>Accommodation</span>
+                </a>
+                <a href="#how-to-reach">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2m0 18l6-3m-6 3V2m6 15l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 2"
+                    ></path>
+                  </svg>
+                  <span>How to reach us</span>
                 </a>
                 <a href="#canteen">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1901,6 +1925,62 @@
       </div>
     </section>
 
+    <!-- How to Reach Section -->
+    <section id="how-to-reach" class="section bg-white py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">How to Reach SASTRA University</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg max-w-4xl mx-auto">
+          SASTRA University is accessible by air, rail, and road, with frequent local transport from nearby hubs.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div class="card h-full">
+            <h3 class="card-title text-xl mb-3">By Air</h3>
+            <p class="card-text mb-3">
+              The nearest airport is Tiruchirappalli International Airport, approximately 60 km from SASTRA University.
+            </p>
+            <p class="card-text mb-3">
+              The airport has both domestic and international flights. From the airport, you can hire a taxi or take a
+              bus to reach the campus.
+            </p>
+            <p class="card-text"><strong>Typical travel time:</strong> Around 1.5 hours (depending on traffic).</p>
+          </div>
+
+          <div class="card h-full">
+            <h3 class="card-title text-xl mb-3">By Road</h3>
+            <p class="card-text mb-3">
+              SASTRA University is well-connected by road. Thanjavur Bus Stand (around 15 km from campus) has regular
+              buses from Chennai, Madurai, Bangalore, and Coimbatore.
+            </p>
+            <p class="card-text mb-3">
+              From Thanjavur, buses to SASTRA depart every 5 minutes, making local travel very convenient.
+            </p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-1">
+              <li>From Trichy: buses every 5 minutes, about 50 minutes travel time</li>
+              <li>Chennai to Thanjavur: about 7 hours</li>
+              <li>Bangalore to Thanjavur: about 7 to 8 hours</li>
+              <li>Coimbatore/Madurai to Thanjavur: about 4 hours</li>
+            </ul>
+          </div>
+
+          <div class="card h-full md:col-span-2 lg:col-span-1">
+            <h3 class="card-title text-xl mb-3">By Train</h3>
+            <p class="card-text mb-3">
+              The closest railway station is Thanjavur Junction, about 17 km from the university, with good connectivity
+              to Chennai, Bangalore, and Coimbatore.
+            </p>
+            <p class="card-text mb-3">
+              From Thanjavur Junction, local buses, taxis, or auto-rickshaws can take you to campus in roughly 15
+              minutes.
+            </p>
+            <p class="card-text">
+              Alternatively, Trichy Junction is another nearby major station, around 50 minutes away by bus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Canteen Section -->
     <section id="canteen" class="section bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-20">
       <div class="container mx-auto px-4">
@@ -2266,6 +2346,7 @@
           { name: 'Andrea Solotar', affiliation: 'University of Buenos Aires, Autónoma de Buenos Aires' },
           { name: 'Ravindranathan Thangadurai', affiliation: 'Harish-Chandra Research Institute, Prayagraj' },
           { name: 'B. Sury', affiliation: 'ISI, Bangalore' },
+          { name: 'Selvaraj Chelliah', affiliation: 'Periyar University, Salem' },
         ],
         advisoryCommittee: [
           {
