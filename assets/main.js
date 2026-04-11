@@ -273,11 +273,15 @@ analogue of the Auslander-Buchsbaum theorem in this setting.`,
 
 window.addEventListener('scroll', function () {
   var navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
   if (window.scrollY > 100) {
     navbar.classList.add('bg-[#0d0d0d]');
+    navbar.classList.add('navbar-dark');
     navbar.classList.add('shadow-md');
   } else {
     navbar.classList.remove('bg-[#0d0d0d]');
+    navbar.classList.remove('navbar-dark');
     navbar.classList.remove('shadow-md');
   }
 });

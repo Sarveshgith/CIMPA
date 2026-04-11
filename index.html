@@ -160,6 +160,26 @@
         width: 100%;
       }
 
+      /* Keep desktop nav text readable when navbar turns dark on scroll */
+      #navbar.navbar-dark .nav-link,
+      #navbar.navbar-dark .dropdown-toggle {
+        color: #e2e8f0;
+      }
+
+      #navbar.navbar-dark .nav-link::after {
+        background: #93c5fd;
+      }
+
+      #navbar.navbar-dark .nav-link:hover,
+      #navbar.navbar-dark .dropdown-toggle:hover {
+        color: #ffffff;
+        background: rgba(148, 163, 184, 0.2);
+      }
+
+      #navbar.navbar-dark .dropdown-icon {
+        color: #cbd5e1;
+      }
+
       /* Dropdown Menu Styles */
       .dropdown-wrapper {
         position: relative;
@@ -1885,45 +1905,30 @@
           Comfortable and convenient accommodation options for CIMPA School participants
         </p>
 
-        <!-- Carousel Container -->
-        <div class="max-w-5xl mx-auto">
-          <div class="accommodation-carousel-wrapper relative">
-            <div
-              id="accommodationCarousel"
-              class="accommodation-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4"
-            >
+        <div class="max-w-6xl mx-auto">
+          <div class="accommodation-carousel-wrapper">
+            <div id="accommodationCarousel" class="accommodation-grid">
               <!-- Accommodations will be loaded dynamically -->
             </div>
-
-            <div id="mobileScrollHint" class="mobile-scroll-hint" role="note" aria-live="polite">
-              <span>Swipe left or right to see more hotels</span>
-              <span class="mobile-scroll-hint-arrow" aria-hidden="true"></span>
-            </div>
-
-            <!-- Navigation Buttons -->
-            <button
-              id="prevBtn"
-              class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg"
-              aria-label="Previous accommodation"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-
-            <button
-              id="nextBtn"
-              class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 z-10 shadow-lg"
-              aria-label="Next accommodation"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Accommodation Details Modal -->
+    <div
+      id="accommodationModal"
+      class="course-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="accommodationModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content accommodation-modal-content">
+        <button class="close-modal" aria-label="Close modal">×</button>
+        <div id="accommodationModalContent"></div>
+      </div>
+    </div>
 
     <!-- How to Reach Section -->
     <section id="how-to-reach" class="section bg-white py-20">
@@ -1933,50 +1938,66 @@
           SASTRA University is accessible by air, rail, and road, with frequent local transport from nearby hubs.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div class="card h-full">
-            <h3 class="card-title text-xl mb-3">By Air</h3>
-            <p class="card-text mb-3">
-              The nearest airport is Tiruchirappalli International Airport, approximately 60 km from SASTRA University.
-            </p>
-            <p class="card-text mb-3">
-              The airport has both domestic and international flights. From the airport, you can hire a taxi or take a
-              bus to reach the campus.
-            </p>
-            <p class="card-text"><strong>Typical travel time:</strong> Around 1.5 hours (depending on traffic).</p>
-          </div>
+        <div class="reach-accordion max-w-4xl mx-auto space-y-4">
+          <details class="reach-item" open>
+            <summary class="reach-summary">
+              <span class="reach-title">By Air</span>
+              <span class="reach-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="reach-content">
+              <p class="card-text mb-3">
+                The nearest airport is Tiruchirappalli International Airport, approximately 60 km from SASTRA
+                University.
+              </p>
+              <p class="card-text mb-3">
+                The airport has both domestic and international flights. From the airport, you can hire a taxi or take a
+                bus to reach the campus.
+              </p>
+              <p class="card-text"><strong>Typical travel time:</strong> Around 1.5 hours (depending on traffic).</p>
+            </div>
+          </details>
 
-          <div class="card h-full">
-            <h3 class="card-title text-xl mb-3">By Road</h3>
-            <p class="card-text mb-3">
-              SASTRA University is well-connected by road. Thanjavur Bus Stand (around 15 km from campus) has regular
-              buses from Chennai, Madurai, Bangalore, and Coimbatore.
-            </p>
-            <p class="card-text mb-3">
-              From Thanjavur, buses to SASTRA depart every 5 minutes, making local travel very convenient.
-            </p>
-            <ul class="list-disc pl-5 text-gray-700 space-y-1">
-              <li>From Trichy: buses every 5 minutes, about 50 minutes travel time</li>
-              <li>Chennai to Thanjavur: about 7 hours</li>
-              <li>Bangalore to Thanjavur: about 7 to 8 hours</li>
-              <li>Coimbatore/Madurai to Thanjavur: about 4 hours</li>
-            </ul>
-          </div>
+          <details class="reach-item">
+            <summary class="reach-summary">
+              <span class="reach-title">By Road</span>
+              <span class="reach-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="reach-content">
+              <p class="card-text mb-3">
+                SASTRA University is well-connected by road. Thanjavur Bus Stand (around 15 km from campus) has regular
+                buses from Chennai, Madurai, Bangalore, and Coimbatore.
+              </p>
+              <p class="card-text mb-3">
+                From Thanjavur, buses to SASTRA depart every 5 minutes, making local travel very convenient.
+              </p>
+              <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                <li>From Trichy: buses every 5 minutes, about 50 minutes travel time</li>
+                <li>Chennai to Thanjavur: about 7 hours</li>
+                <li>Bangalore to Thanjavur: about 7 to 8 hours</li>
+                <li>Coimbatore/Madurai to Thanjavur: about 4 hours</li>
+              </ul>
+            </div>
+          </details>
 
-          <div class="card h-full md:col-span-2 lg:col-span-1">
-            <h3 class="card-title text-xl mb-3">By Train</h3>
-            <p class="card-text mb-3">
-              The closest railway station is Thanjavur Junction, about 17 km from the university, with good connectivity
-              to Chennai, Bangalore, and Coimbatore.
-            </p>
-            <p class="card-text mb-3">
-              From Thanjavur Junction, local buses, taxis, or auto-rickshaws can take you to campus in roughly 15
-              minutes.
-            </p>
-            <p class="card-text">
-              Alternatively, Trichy Junction is another nearby major station, around 50 minutes away by bus.
-            </p>
-          </div>
+          <details class="reach-item">
+            <summary class="reach-summary">
+              <span class="reach-title">By Train</span>
+              <span class="reach-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="reach-content">
+              <p class="card-text mb-3">
+                The closest railway station is Thanjavur Junction, about 17 km from the university, with good
+                connectivity to Chennai, Bangalore, and Coimbatore.
+              </p>
+              <p class="card-text mb-3">
+                From Thanjavur Junction, local buses, taxis, or auto-rickshaws can take you to campus in roughly 15
+                minutes.
+              </p>
+              <p class="card-text">
+                Alternatively, Trichy Junction is another nearby major station, around 50 minutes away by bus.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -2056,6 +2077,10 @@
           {
             logo: 'assets/sponsors/WhatsApp Image 2026-03-27 at 22.02.41.jpeg',
             name: 'Random shit 2',
+          },
+          {
+            logo: 'assets/sponsors/UoL_Guideline_Logo 4 (1).jpeg',
+            name: 'Random shit 3',
           },
         ],
       };
@@ -2189,15 +2214,26 @@
         }
       }
 
-      // Load and render accommodation carousel
+      // Load and render accommodation cards
       async function loadAccommodation() {
         try {
           const data = accommodationData;
 
-          // Function to create accommodation card
-          function createAccommodationCard(accommodation) {
-            const card = document.createElement('div');
-            card.className = 'accommodation-card';
+          function getBriefDescription(text) {
+            if (!text) return 'Comfortable stay option near SASTRA campus.';
+            const sentence = text.split('. ')[0]?.trim();
+            if (sentence && sentence.length <= 150) {
+              return sentence.endsWith('.') ? sentence : `${sentence}.`;
+            }
+            const words = text.split(' ').slice(0, 20).join(' ').trim();
+            return `${words}...`;
+          }
+
+          function openAccommodationModal(accommodation) {
+            const modal = document.getElementById('accommodationModal');
+            const modalContent = document.getElementById('accommodationModalContent');
+            if (!modal || !modalContent) return;
+
             const arrangementMarker =
               accommodation.isSastraArranged ? '<span class="accommodation-status-badge">SASTRA-arranged</span>' : '';
 
@@ -2211,72 +2247,67 @@
                    </svg>
                    Visit Website
                  </a>`
-              : '';
+              : '<p class="accommodation-note">Website details will be shared by the organizing team.</p>';
 
-            card.innerHTML = `
-              <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image" loading="lazy" />
-              <div class="accommodation-overlay">
-                <div class="accommodation-overlay-content">
-                  <h3 class="accommodation-title">${accommodation.name} ${arrangementMarker}</h3>
-                  <p class="accommodation-description">${accommodation.description}</p>
+            modalContent.innerHTML = `
+              <div class="accommodation-modal-header">
+                <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-modal-image" loading="lazy" />
+                <div>
+                  <h3 id="accommodationModalTitle" class="accommodation-modal-title">${accommodation.name}</h3>
+                  ${arrangementMarker}
                 </div>
               </div>
-              ${websiteLink}
+              <p class="accommodation-modal-description">${accommodation.description}</p>
+              <div class="accommodation-modal-actions">
+                ${websiteLink}
+              </div>
             `;
+
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }
+
+          // Function to create accommodation card
+          function createAccommodationCard(accommodation) {
+            const card = document.createElement('article');
+            card.className = 'accommodation-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+
+            const arrangementMarker =
+              accommodation.isSastraArranged ? '<span class="accommodation-status-badge">SASTRA-arranged</span>' : '';
+            const brief = getBriefDescription(accommodation.description);
+
+            card.innerHTML = `
+              <div class="accommodation-summary-media">
+                <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image" loading="lazy" />
+                <div class="accommodation-overlay-content">
+                  <h3 class="accommodation-title">${accommodation.name}</h3>
+                  <p class="accommodation-brief">${brief}</p>
+                  ${arrangementMarker}
+                </div>
+              </div>
+            `;
+
+            card.addEventListener('click', () => openAccommodationModal(accommodation));
+            card.addEventListener('keydown', (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openAccommodationModal(accommodation);
+              }
+            });
 
             return card;
           }
 
-          // Render all accommodations in carousel
-          const carousel = document.getElementById('accommodationCarousel');
+          // Render all accommodations
+          const container = document.getElementById('accommodationCarousel');
 
           if (data.accommodations && data.accommodations.length > 0) {
             data.accommodations.forEach((accommodation) => {
-              carousel.appendChild(createAccommodationCard(accommodation));
+              container.appendChild(createAccommodationCard(accommodation));
             });
-          }
-
-          // Carousel navigation functionality
-          const prevBtn = document.getElementById('prevBtn');
-          const nextBtn = document.getElementById('nextBtn');
-          const scrollAmount = Math.max(360, Math.floor(carousel.clientWidth * 0.75));
-          const mobileScrollHint = document.getElementById('mobileScrollHint');
-
-          prevBtn.addEventListener('click', () => {
-            carousel.scrollBy({
-              left: -scrollAmount,
-              behavior: 'smooth',
-            });
-          });
-
-          nextBtn.addEventListener('click', () => {
-            carousel.scrollBy({
-              left: scrollAmount,
-              behavior: 'smooth',
-            });
-          });
-
-          if (mobileScrollHint && window.matchMedia('(max-width: 768px)').matches) {
-            const hideScrollHint = () => {
-              mobileScrollHint.classList.add('is-hidden');
-            };
-
-            if (carousel.scrollWidth <= carousel.clientWidth + 4) {
-              hideScrollHint();
-            } else {
-              carousel.addEventListener(
-                'scroll',
-                () => {
-                  if (carousel.scrollLeft > 12) {
-                    hideScrollHint();
-                  }
-                },
-                { passive: true },
-              );
-
-              carousel.addEventListener('touchstart', hideScrollHint, { once: true, passive: true });
-              setTimeout(hideScrollHint, 6000);
-            }
           }
         } catch (error) {
           console.error('Error loading accommodation:', error);
@@ -2335,6 +2366,7 @@
         scientificCommittee: [
           { name: 'Henning Krause', affiliation: 'Universität Bielefeld, Bielefeld' },
           { name: 'Bernhard Keller', affiliation: 'Université Paris Cité, Paris' },
+          { name: 'Selvaraj Chelliah', affiliation: 'Periyar University, Salem' },
           { name: 'Krishnaswami Alladi', affiliation: 'University of Florida, Gainesville' },
           {
             name: 'Michel Waldschmidt',
@@ -2346,7 +2378,6 @@
           { name: 'Andrea Solotar', affiliation: 'University of Buenos Aires, Autónoma de Buenos Aires' },
           { name: 'Ravindranathan Thangadurai', affiliation: 'Harish-Chandra Research Institute, Prayagraj' },
           { name: 'B. Sury', affiliation: 'ISI, Bangalore' },
-          { name: 'Selvaraj Chelliah', affiliation: 'Periyar University, Salem' },
         ],
         advisoryCommittee: [
           {
@@ -3070,6 +3101,19 @@
           img.addEventListener('error', function () {
             this.src = 'assets/imgs/Portrait_Placeholder.png';
             this.classList.remove('image-loading');
+          });
+        });
+
+        // Keep only one How-to-Reach panel open at a time.
+        const reachAccordionItems = document.querySelectorAll('#how-to-reach details.reach-item');
+        reachAccordionItems.forEach((item) => {
+          item.addEventListener('toggle', function () {
+            if (!this.open) return;
+            reachAccordionItems.forEach((other) => {
+              if (other !== this) {
+                other.open = false;
+              }
+            });
           });
         });
       });
